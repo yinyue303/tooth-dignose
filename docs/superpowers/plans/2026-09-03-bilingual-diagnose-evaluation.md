@@ -10,6 +10,48 @@
 
 ---
 
+## 新对话交接说明
+
+### 当前状态
+
+- 本文档是最终工作流程，尚未执行下面任何实现任务；所有复选框均应从未完成状态开始。
+- `models/dignose.py`、`prompt/diagnose--2.txt` 和 `dataset/excel/test-diagnostic.xlsx` 尚未被本次工作修改。
+- 已确认测试集共有 1799 条记录，其中中文 917 条、英文 882 条；输入 `q` 与参考答案 `a` 的语言类别匹配率为 100%。
+- 医学词典和 jieba 分词方案已经明确暂缓，本轮中文 BLEU 使用本文定义的字符级 tokenizer。
+- 最终指标只调用 `print()` 写入标准输出，由 HPC 作业系统收集到日志；不得创建 `_metrics.txt`。
+
+### 仓库注意事项
+
+- 当前仓库分支为 `main`。
+- 三个目标输入文件目前都是未跟踪文件。直接创建 Git worktree 不会把它们带入新 worktree。
+- 新对话开始执行前，应先确认工作目录为 `D:\COde`，并读取 `AGENTS.md`、设计文档和本文档。
+- 不要删除或覆盖仓库中无关的未跟踪文件，也不要把无关文件加入提交。
+- 设计文档位于 `docs/superpowers/specs/2026-09-03-bilingual-diagnose-evaluation-design.md`。
+
+### 本地验证环境
+
+Codex 工作区自带的 Python 路径为：
+
+```text
+C:\Users\18033\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe
+```
+
+该环境已确认包含 `openpyxl 3.1.5` 和 `pandas 3.0.1`，但不包含 NLTK 或 PyTorch。它可用于单元测试、Excel 修改和结构校验；完整模型推理必须在用户的 HPC 环境执行。
+
+### 可直接发送给新对话的任务说明
+
+```text
+请在 D:\COde 中严格执行
+docs/superpowers/plans/2026-09-03-bilingual-diagnose-evaluation.md。
+在当前包含未跟踪目标文件的工作目录中完成修改，不要创建一个缺少这些文件的空 worktree。
+不要实现 jieba 或医学词典；中文 BLEU 使用计划中定义的字符级 tokenizer。
+修改 test-diagnostic.xlsx 增加 language 列，中文为 0、英文为 1；按 language 选择中英文提示词。
+英文最终打印 BLEU、METEOR、余弦相似度，中文最终打印 BLEU、余弦相似度；只打印到标准输出，不生成指标汇总文件。
+完成轻量测试、Python 语法检查和 Excel 完整性检查后再汇报结果。
+```
+
+---
+
 ### Task 1: 建立可测试的双语评估辅助模块
 
 **Files:**
