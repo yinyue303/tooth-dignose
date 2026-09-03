@@ -1,337 +1,192 @@
-# 双语诊断报告评估实施计划
-
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
-
-**Goal:** 为诊断测试集增加稳定的语言标签，按输入语言选择中英文提示词，并只在日志中输出英文三项、中文两项平均指标。
-
-**Architecture:** 用一个不依赖模型或 NLTK 的纯 Python 辅助模块承载语言校验、中文字符级 tokenizer、分组和日志格式，以便本地快速测试。`dignose.py` 继续负责模型推理和 NLTK/Gemma 指标计算；Excel 通过 `openpyxl` 原地增加 `language` 列，提示词按样本语言路由。
-
-**Tech Stack:** Python 3、pandas、openpyxl、PyTorch、Transformers、NLTK、NumPy、unittest
-
----
-
-## 新对话交接说明
-
-### 当前状态
-
-- 本文档是最终工作流程，尚未执行下面任何实现任务；所有复选框均应从未完成状态开始。
-- `models/dignose.py`、`prompt/diagnose--2.txt` 和 `dataset/excel/test-diagnostic.xlsx` 尚未被本次工作修改。
-- 已确认测试集共有 1799 条记录，其中中文 917 条、英文 882 条；输入 `q` 与参考答案 `a` 的语言类别匹配率为 100%。
-- 医学词典和 jieba 分词方案已经明确暂缓，本轮中文 BLEU 使用本文定义的字符级 tokenizer。
-- 最终指标只调用 `print()` 写入标准输出，由 HPC 作业系统收集到日志；不得创建 `_metrics.txt`。
-
-### 仓库注意事项
-
-- 当前仓库分支为 `main`。
-- 三个目标输入文件目前都是未跟踪文件。直接创建 Git worktree 不会把它们带入新 worktree。
-- 新对话开始执行前，应先确认工作目录为 `D:\COde`，并读取 `AGENTS.md`、设计文档和本文档。
-- 不要删除或覆盖仓库中无关的未跟踪文件，也不要把无关文件加入提交。
-- 设计文档位于 `docs/superpowers/specs/2026-09-03-bilingual-diagnose-evaluation-design.md`。
-
-### 本地验证环境
-
-Codex 工作区自带的 Python 路径为：
-
-```text
-C:\Users\18033\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe
-```
-
-该环境已确认包含 `openpyxl 3.1.5` 和 `pandas 3.0.1`，但不包含 NLTK 或 PyTorch。它可用于单元测试、Excel 修改和结构校验；完整模型推理必须在用户的 HPC 环境执行。
-
-### 可直接发送给新对话的任务说明
-
-```text
-请在 D:\COde 中严格执行
-docs/superpowers/plans/2026-09-03-bilingual-diagnose-evaluation.md。
-在当前包含未跟踪目标文件的工作目录中完成修改，不要创建一个缺少这些文件的空 worktree。
-不要实现 jieba 或医学词典；中文 BLEU 使用计划中定义的字符级 tokenizer。
-修改 test-diagnostic.xlsx 增加 language 列，中文为 0、英文为 1；按 language 选择中英文提示词。
-英文最终打印 BLEU、METEOR、余弦相似度，中文最终打印 BLEU、余弦相似度；只打印到标准输出，不生成指标汇总文件。
-完成轻量测试、Python 语法检查和 Excel 完整性检查后再汇报结果。
-```
-
----
-
-### Task 1: 建立可测试的双语评估辅助模块
-
-**Files:**
-- Create: `models/diagnose_evaluation.py`
-- Create: `tests/test_diagnose_evaluation.py`
-
-- [ ] **Step 1: 编写中文 tokenizer、语言校验、分组和日志格式的失败测试**
-
-```python
-import unittest
-
-from models.diagnose_evaluation import (
-    CHINESE,
-    ENGLISH,
-    chinese_metric_tokenize,
-    detect_language,
-    format_metric_summary,
-    normalize_metric_text,
-    partition_by_language,
-    validate_language,
-)
-
-
-class DiagnoseEvaluationTests(unittest.TestCase):
-    def test_detect_language(self):
-        self.assertEqual(detect_language("请生成口腔报告"), CHINESE)
-        self.assertEqual(detect_language("Generate a dental report"), ENGLISH)
-
-    def test_chinese_tokenizer_preserves_all_unicode_and_protected_tokens(self):
-        text = "47号牙齿𠀀豈〇牙髓炎（K04.005）"
-        tokens = chinese_metric_tokenize(text)
-        self.assertEqual(
-            tokens,
-            [
-                "47", "号", "牙", "齿", "𠀀", "豈", "〇", "牙", "髓", "炎",
-                "(", "k04.005", ")",
-            ],
-        )
-        self.assertEqual(
-            "".join(tokens),
-            normalize_metric_text(text).replace(" ", ""),
-        )
-
-    def test_detect_language_covers_common_and_extended_han_characters(self):
-        for character in ("牙", "㐀", "𠀀", "豈", "〇"):
-            with self.subTest(character=character):
-                self.assertEqual(detect_language(character), CHINESE)
-
-    def test_validate_language_rejects_other_values(self):
-        self.assertEqual(validate_language(0), CHINESE)
-        self.assertEqual(validate_language(1), ENGLISH)
-        with self.assertRaisesRegex(ValueError, "language"):
-            validate_language(2)
-
-    def test_partition_requires_both_languages(self):
-        groups = partition_by_language(["中", "English"], ["中", "English"], [0, 1])
-        self.assertEqual(groups[CHINESE], (["中"], ["中"]))
-        self.assertEqual(groups[ENGLISH], (["English"], ["English"]))
-
-    def test_summary_contains_only_requested_metrics(self):
-        summary = format_metric_summary(1, 0.1, 0.2, 0.3, 1, 0.4, 0.5)
-        self.assertIn("English METEOR: 0.200000", summary)
-        self.assertIn("Chinese BLEU: 0.400000", summary)
-        self.assertNotIn("Chinese METEOR", summary)
-
-
-if __name__ == "__main__":
-    unittest.main()
-```
-
-- [ ] **Step 2: 运行测试并确认因模块不存在而失败**
-
-Run: `python -m unittest tests.test_diagnose_evaluation -v`
-
-Expected: FAIL，错误包含 `No module named 'models.diagnose_evaluation'`。
-
-- [ ] **Step 3: 实现最小辅助模块**
-
-```python
-import unicodedata
-import re
-
-CHINESE = 0
-ENGLISH = 1
-_PROTECTED_TOKEN_RE = re.compile(
-    r"[a-z]\d{2}(?:\.\d+)?(?:x\d+)?|[a-z]+|\d+(?:\.\d+)*",
-    re.IGNORECASE,
-)
-
-
-def normalize_metric_text(text):
-    return unicodedata.normalize("NFKC", str(text)).lower().strip()
-
-
-def is_han_character(character):
-    name = unicodedata.name(character, "")
-    return (
-        name.startswith("CJK UNIFIED IDEOGRAPH-")
-        or name.startswith("CJK COMPATIBILITY IDEOGRAPH-")
-        or character == "〇"
-    )
-
-
-def detect_language(text):
-    return CHINESE if any(is_han_character(char) for char in str(text)) else ENGLISH
-
-
-def validate_language(value):
-    if value in (CHINESE, ENGLISH):
-        return int(value)
-    raise ValueError(f"language 必须是 0 或 1，实际为：{value!r}")
-
-
-def chinese_metric_tokenize(text):
-    text = normalize_metric_text(text)
-    tokens = []
-    position = 0
-    while position < len(text):
-        if text[position].isspace():
-            position += 1
-            continue
-        match = _PROTECTED_TOKEN_RE.match(text, position)
-        if match:
-            tokens.append(match.group())
-            position = match.end()
-        else:
-            tokens.append(text[position])
-            position += 1
-    return tokens
-
-
-def partition_by_language(references, predictions, languages):
-    if not (len(references) == len(predictions) == len(languages)):
-        raise ValueError("参考答案、预测结果和语言标签数量必须一致")
-    groups = {CHINESE: ([], []), ENGLISH: ([], [])}
-    for reference, prediction, language in zip(references, predictions, languages):
-        refs, preds = groups[validate_language(language)]
-        refs.append(reference)
-        preds.append(prediction)
-    if not groups[CHINESE][0] or not groups[ENGLISH][0]:
-        raise ValueError("中文和英文分组都必须至少包含一个样本")
-    return groups
-
-
-def format_metric_summary(
-    english_count,
-    english_bleu,
-    english_meteor,
-    english_cosine,
-    chinese_count,
-    chinese_bleu,
-    chinese_cosine,
-):
-    return (
-        "最终评估结果：\n\n"
-        f"英文样本数量：{english_count}\n"
-        f"English BLEU: {english_bleu:.6f}\n"
-        f"English METEOR: {english_meteor:.6f}\n"
-        f"English Cosine Similarity: {english_cosine:.6f}\n\n"
-        f"中文样本数量：{chinese_count}\n"
-        f"Chinese BLEU: {chinese_bleu:.6f}\n"
-        f"Chinese Cosine Similarity: {chinese_cosine:.6f}"
-    )
-```
-
-- [ ] **Step 4: 运行测试并确认通过**
-
-Run: `python -m unittest tests.test_diagnose_evaluation -v`
-
-Expected: 6 tests PASS。
-
-### Task 2: 为 Excel 增加语言列
-
-**Files:**
-- Modify: `dataset/excel/test-diagnostic.xlsx`
-
-- [ ] **Step 1: 用临时输出文件写入 `language` 列**
-
-使用 `openpyxl.load_workbook()` 打开工作簿；在 E1 写入 `language`。对 E2:E1800 调用 `detect_language(q)`，中文写整数 0，英文写整数 1。复制 D 列相邻单元格的样式，并把工作表中的 Excel Table 范围扩展到 E 列。先保存为同目录临时 `.xlsx`，不要直接覆盖原文件。
-
-- [ ] **Step 2: 验证临时工作簿**
-
-重新加载临时文件并断言：数据行 1799、中文 917、英文 882、无空语言、集合严格等于 `{0, 1}`、A:D 单元格值与原工作簿完全一致、表格范围覆盖 E 列、公式错误数为 0。
-
-- [ ] **Step 3: 原子替换原工作簿并复验**
-
-验证成功后用临时文件替换 `dataset/excel/test-diagnostic.xlsx`，再次只读打开并检查 E1、E2:E1800 和计数。
-
-### Task 3: 增加英文报告提示词
-
-**Files:**
-- Create: `prompt/diagnose--2-en.txt`
-- Preserve: `prompt/diagnose--2.txt`
-
-- [ ] **Step 1: 创建与中文规则等价的英文提示词**
-
-英文提示词必须固定输出以下标题且各出现一次：
-
-```text
-Patient Record:
-Examination:
-X-Rays Examination:
-Diagnosis:
-Treatment Plan:
-Treatment Recommendations:
-Management:
-Medical Instructions:
-Remarks:
-```
-
-缺失内容统一写 `Not provided.`，禁止编造患者信息、牙位、疾病编码、影像结果、药物和已实施治疗。
-
-- [ ] **Step 2: 静态检查两份提示词**
-
-逐一检查中文和英文九个标题均存在、顺序一致、没有重复；确认英文提示词未要求中文输出。
-
-### Task 4: 将双语分组接入诊断评估脚本
-
-**Files:**
-- Modify: `models/dignose.py`
-- Test: `tests/test_diagnose_evaluation.py`
-
-- [ ] **Step 1: 增加 JSON 图片解析的失败测试**
-
-在测试文件中新增：合法 JSON 数组返回字符串列表；空字符串、字典、包含非字符串元素的数组均抛出 `ValueError`。
-
-- [ ] **Step 2: 实现并测试安全图片解析**
-
-在 `models/diagnose_evaluation.py` 中用 `json.loads()` 实现 `parse_image_list()`，禁止 `eval()`；运行单元测试至通过。
-
-- [ ] **Step 3: 修改提示词加载和行级路由**
-
-读取 `diagnose--2.txt` 为中文提示词，读取 `diagnose--2-en.txt` 为英文提示词。加载 Excel 后要求存在 `id、q、a、images、language` 五列，规范化 `language`，每条消息按 0/1 插入对应系统提示词。
-
-- [ ] **Step 4: 拆分 BLEU 与 METEOR 计算**
-
-英文使用 `wordpunct_tokenize(normalize_metric_text(text))` 计算 BLEU-4 和 METEOR；中文使用 `chinese_metric_tokenize()` 只计算 BLEU-4。两种 BLEU 均使用 `(0.25, 0.25, 0.25, 0.25)` 和 `SmoothingFunction().method1`。
-
-- [ ] **Step 5: 一次编码后按语言汇总余弦相似度**
-
-Gemma 仅加载一次并对全部 reference/prediction 编码；按 `language` 布尔索引分别计算中英文平均值，避免为两组重复加载模型。
-
-- [ ] **Step 6: 删除指标文件和逐样本指标写入**
-
-保留现有 `id、true、pred` 预测文件；删除 `result_df["bleu"]`、`result_df["meteor"]`、余弦列、`summary_df` 和 `_metrics.txt` 写入逻辑。
-
-- [ ] **Step 7: 只打印最终分组平均值**
-
-调用 `format_metric_summary()` 并打印，保证英文输出 BLEU/METEOR/Cosine，中文只输出 BLEU/Cosine，均保留六位小数。
-
-### Task 5: 最终验证
-
-**Files:**
-- Verify: `models/diagnose_evaluation.py`
-- Verify: `models/dignose.py`
-- Verify: `prompt/diagnose--2-en.txt`
-- Verify: `dataset/excel/test-diagnostic.xlsx`
-
-- [ ] **Step 1: 运行所有轻量测试**
-
-Run: `python -m unittest discover -s tests -v`
-
-Expected: 全部 PASS。
-
-- [ ] **Step 2: 运行语法检查**
-
-Run: `python -m py_compile models/diagnose_evaluation.py models/dignose.py`
-
-Expected: exit code 0。
-
-- [ ] **Step 3: 验证工作簿数据与样式**
-
-使用 openpyxl 重新打开最终文件，确认 1799 行、917 个 0、882 个 1、A:D 内容不变、E 列样式存在、所有公式无错误。
-
-- [ ] **Step 4: 检查差异和范围**
-
-Run: `git diff --check`
-
-Expected: 无空白错误；未触碰 LoRA 路径、CUDA 映射及其他训练脚本。
-
-- [ ] **Step 5: 记录完整推理限制**
-
-本机缺少 PyTorch、Transformers 和 NLTK，且仓库中没有配置的 LoRA 权重，因此本地只执行纯逻辑测试、语法检查和 Excel 完整性检查；完整 GPU 推理由用户的 HPC 环境执行并在日志中验证最终五项输出。
+# 双语诊断报告评估工作流程
+
+## 目标
+
+修改诊断测试流程，使模型根据输入语言生成同语言报告，并分别汇总中文和英文样本的指标。最终指标只打印到标准输出，由 HPC 作业系统记录在日志文件中。
+
+## 已确认的实验规则
+
+- 中文样本计算 BLEU-4 和 Gemma 余弦相似度。
+- 英文样本计算 BLEU-4、METEOR 和 Gemma 余弦相似度。
+- 不计算中英文混合总平均值。
+- 中文 BLEU 暂时采用字符级划分，不使用 jieba，也不建立医学词典。
+- 最终平均指标不写入单独的指标文件，只打印到日志。
+- 原有逐样本预测结果继续保存。
+
+## 当前状态
+
+- 尚未修改模型评估代码、Excel 或提示词。
+- 测试集共有 1799 条记录，其中中文 917 条、英文 882 条。
+- 已核对输入 q 与参考答案 a 的语言类别，1799 条全部一致。
+- models/dignose.py、prompt/diagnose--2.txt 和 dataset/excel/test-diagnostic.xlsx 当前均未被 Git 跟踪。
+- 仓库当前位于 main 分支。创建新的 Git worktree 不会自动带入这些未跟踪文件；新对话需要在能够访问这些文件的当前工作目录中执行。
+
+## 涉及的文件
+
+- dataset/excel/test-diagnostic.xlsx：增加语言标签。
+- prompt/diagnose--2.txt：保留为中文提示词。
+- prompt/diagnose--2-en.txt：新增英文提示词。
+- models/dignose.py：接入语言路由和分组指标。
+- 可选的独立辅助文件：存放语言校验、中文字符划分和结果格式化逻辑，避免测试时加载大模型。
+- 测试文件：验证语言标签、分词、分组和日志输出。
+
+## 工作步骤
+
+### 第一步：检查并备份输入状态
+
+- 确认工作目录为 D:\COde。
+- 读取仓库中的 AGENTS.md，并遵守中文交流要求。
+- 记录三个目标文件修改前的大小、工作表名称、列名、行数和校验值。
+- 确认没有覆盖用户已有修改。
+- 修改 Excel 时先输出到临时文件，验证成功后再替换原文件。
+
+### 第二步：给测试 Excel 增加语言列
+
+- 打开 dataset/excel/test-diagnostic.xlsx。
+- 在 images 列后新增 language 列。
+- 根据 q 列内容判断语言：中文写整数 0，英文写整数 1。
+- 语言判断只能读取 q，不能读取参考答案 a。
+- 保持原有 id、q、a、images 四列的值和顺序不变。
+- 延续现有工作表样式，并将 Excel 表格范围扩展到 language 列。
+- 保存后重新打开工作簿，确认文件结构正常。
+- 验证总数据行数为 1799、中文为 917、英文为 882。
+- 验证 language 没有空值，并且只包含 0 和 1。
+
+### 第三步：准备双语提示词
+
+- 保留 prompt/diagnose--2.txt 作为中文系统提示词。
+- 新建 prompt/diagnose--2-en.txt 作为英文系统提示词。
+- 英文提示词应与中文提示词表达相同的医学约束，不能增加或减少任务要求。
+- 中文报告固定包含病历、检查、X线检查示、诊断、治疗方案、治疗建议、处理、医嘱、备注九个部分。
+- 英文报告固定包含 Patient Record、Examination、X-Rays Examination、Diagnosis、Treatment Plan、Treatment Recommendations、Management、Medical Instructions、Remarks 九个部分。
+- 中文缺失信息统一填写“未提供”。
+- 英文缺失信息统一填写“Not provided.”。
+- 两种提示词都必须禁止编造患者信息、牙位、检查结果、影像结果、疾病编码、药物和治疗操作。
+- 检查两份提示词的九个标题是否完整、顺序一致并且各出现一次。
+
+### 第四步：定义语言路由
+
+- dignose.py 读取 Excel 后检查 id、q、a、images、language 五列是否存在。
+- language 为 0 时，为该样本插入中文系统提示词。
+- language 为 1 时，为该样本插入英文系统提示词。
+- language 为空或出现其他值时立即终止并给出明确错误。
+- 一个批次中可以同时包含中文和英文样本，每条样本独立选择提示词。
+- 参考答案 a 只用于最终指标计算，不参与提示词选择。
+
+### 第五步：定义文本预处理和分词
+
+- 指标计算前统一处理 Unicode 兼容字符、全角与半角字符、大小写和多余空白。
+- 中文分词采用字符级划分。
+- 中文汉字、扩展汉字和其他非空白 Unicode 字符不得被静默丢弃。
+- 连续英文单词、连续数字、牙位数字和疾病编码应作为完整单位保留，避免逐字母或逐数字拆开。
+- 中文标点作为独立单位处理。
+- 英文 BLEU 和 METEOR 继续使用 NLTK 的英文分词方式。
+- 空文本应返回空分词结果，并由指标逻辑按零分处理。
+
+### 第六步：计算英文指标
+
+- 从完整结果中筛选 language 为 1 的英文样本。
+- 对每条英文参考答案和预测结果计算 BLEU-4。
+- BLEU-4 使用四元权重和现有的平滑方式。
+- 对每条英文参考答案和预测结果计算 METEOR。
+- METEOR 调用必须使用正确的单数函数名，不能调用保存分数的列表变量。
+- 运行前确认 HPC 环境已经准备 NLTK METEOR 所需资源。
+- 对所有英文样本的逐条 BLEU 和 METEOR 分别求算术平均值。
+
+### 第七步：计算中文指标
+
+- 从完整结果中筛选 language 为 0 的中文样本。
+- 使用字符级分词计算每条中文参考答案和预测结果的 BLEU-4。
+- 中文 BLEU-4 使用与英文相同的四元权重和平滑方式。
+- 中文样本不计算 METEOR，也不能用 0 代替缺失的 METEOR。
+- 对所有中文样本的逐条 BLEU 求算术平均值。
+
+### 第八步：计算余弦相似度
+
+- Gemma 嵌入模型只加载一次。
+- 按原始样本顺序编码所有参考答案和预测结果。
+- 每条参考答案与对应预测结果计算一次余弦相似度。
+- 根据 language 将余弦分数拆分成中文组和英文组。
+- 分别计算中文平均余弦相似度和英文平均余弦相似度。
+- 不重复加载 Gemma，也不计算中英文混合平均值。
+
+### 第九步：保存预测并打印最终指标
+
+- 原有逐样本预测结果继续保存，至少保留 id、true、pred。
+- 不向预测结果文件增加逐样本 BLEU、METEOR 或余弦相似度列。
+- 删除独立指标汇总文件的生成逻辑。
+- 最终日志先打印英文样本数量，然后打印 English BLEU、English METEOR 和 English Cosine Similarity。
+- 随后打印中文样本数量，然后打印 Chinese BLEU 和 Chinese Cosine Similarity。
+- 所有平均指标统一保留六位小数。
+- 日志中不得出现 Chinese METEOR，也不得出现中英文混合总指标。
+
+### 第十步：同步修复必要问题
+
+- 修复现有 METEOR 函数名与列表变量混淆导致的运行错误。
+- 使用安全方式解析 Excel 中的 images 列，停止使用 eval。
+- 检查 images 的每个值是否为图片路径字符串列表。
+- 检查参考答案、预测结果和语言标签数量是否一致。
+- 检查中文组和英文组都至少包含一个样本。
+- 初始化中英文提示词变量，避免配置关闭时访问未定义变量。
+
+## 验证要求
+
+### Excel 验证
+
+- 文件可以正常打开。
+- 工作表名称和数量不变。
+- 原有 A 到 D 列的全部单元格内容不变。
+- language 列完整写入 1799 个值。
+- 中文数量为 917，英文数量为 882。
+- 表格范围和样式覆盖新增列。
+- 工作簿不存在公式错误或结构损坏。
+
+### 逻辑验证
+
+- 普通中文、扩展汉字、兼容汉字和“〇”不会在字符划分中丢失。
+- 疾病编码和连续数字保持完整。
+- 中文样本只进入中文指标分组。
+- 英文样本只进入英文指标分组。
+- 中文流程不会调用 METEOR。
+- 英文流程会计算全部三个指标。
+- 非法 language 值会产生明确错误。
+
+### 输出验证
+
+- 预测结果文件继续生成。
+- 不生成独立指标汇总文件。
+- 日志只包含英文三项平均指标和中文两项平均指标。
+- 所有指标显示六位小数。
+
+### 静态验证
+
+- 运行全部轻量测试并确保通过。
+- 检查 dignose.py 和辅助文件的 Python 语法。
+- 检查修改范围，确认没有触碰无关训练脚本、模型文件和数据文件。
+- 完整 GPU 推理留给用户的 HPC 环境执行。
+
+## 本轮不处理的内容
+
+- 不引入 jieba。
+- 不创建或提取口腔医学词典。
+- 不修改 LoRA 目录命名。
+- 不调整 CUDA 或 device_map 配置。
+- 不启用已注释的 Llama 余弦相似度。
+- 不计算中英文混合汇总指标。
+
+## 本地环境说明
+
+Codex 工作区自带 Python，可以用于 Excel 修改、轻量测试和语法检查。该环境已确认包含 openpyxl 3.1.5 和 pandas 3.0.1，但不包含 NLTK、PyTorch 和 Transformers。因此本地不能完成真实模型推理或完整指标运行，最终 GPU 实验需要在 HPC 环境执行。
+
+## 完成标准
+
+只有同时满足以下条件才能视为完成：
+
+- Excel language 列正确并通过数据完整性验证。
+- 中英文提示词均已完成并通过标题检查。
+- dignose.py 能按 language 正确路由提示词。
+- 英文输出三个平均指标，中文输出两个平均指标。
+- 最终指标只打印到日志，不生成指标汇总文件。
+- 必要的输入校验和安全解析已经加入。
+- 轻量测试、语法检查和 Excel 验证全部通过。
+- 未修改本流程明确排除的内容。
