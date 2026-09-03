@@ -69,6 +69,7 @@ from models.diagnose_evaluation import (
     chinese_metric_tokenize,
     detect_language,
     format_metric_summary,
+    normalize_metric_text,
     partition_by_language,
     validate_language,
 )
@@ -79,12 +80,25 @@ class DiagnoseEvaluationTests(unittest.TestCase):
         self.assertEqual(detect_language("请生成口腔报告"), CHINESE)
         self.assertEqual(detect_language("Generate a dental report"), ENGLISH)
 
-    def test_chinese_tokenizer_preserves_numbers_and_icd_codes(self):
-        tokens = chinese_metric_tokenize("47号牙齿牙髓炎（K04.005）")
+    def test_chinese_tokenizer_preserves_all_unicode_and_protected_tokens(self):
+        text = "47号牙齿𠀀豈〇牙髓炎（K04.005）"
+        tokens = chinese_metric_tokenize(text)
         self.assertEqual(
             tokens,
-            ["47", "号", "牙", "齿", "牙", "髓", "炎", "(", "k04.005", ")"],
+            [
+                "47", "号", "牙", "齿", "𠀀", "豈", "〇", "牙", "髓", "炎",
+                "(", "k04.005", ")",
+            ],
         )
+        self.assertEqual(
+            "".join(tokens),
+            normalize_metric_text(text).replace(" ", ""),
+        )
+
+    def test_detect_language_covers_common_and_extended_han_characters(self):
+        for character in ("牙", "㐀", "𠀀", "豈", "〇"):
+            with self.subTest(character=character):
+                self.assertEqual(detect_language(character), CHINESE)
 
     def test_validate_language_rejects_other_values(self):
         self.assertEqual(validate_language(0), CHINESE)
@@ -117,15 +131,13 @@ Expected: FAIL，错误包含 `No module named 'models.diagnose_evaluation'`。
 - [ ] **Step 3: 实现最小辅助模块**
 
 ```python
-import re
 import unicodedata
+import re
 
 CHINESE = 0
 ENGLISH = 1
-_CJK_RE = re.compile(r"[\u3400-\u4dbf\u4e00-\u9fff]")
-_ZH_TOKEN_RE = re.compile(
-    r"[a-z]\d{2}(?:\.\d+)?(?:x\d+)?|[a-z]+|\d+(?:\.\d+)*|"
-    r"[\u3400-\u4dbf\u4e00-\u9fff]|[^\w\s]",
+_PROTECTED_TOKEN_RE = re.compile(
+    r"[a-z]\d{2}(?:\.\d+)?(?:x\d+)?|[a-z]+|\d+(?:\.\d+)*",
     re.IGNORECASE,
 )
 
@@ -134,8 +146,17 @@ def normalize_metric_text(text):
     return unicodedata.normalize("NFKC", str(text)).lower().strip()
 
 
+def is_han_character(character):
+    name = unicodedata.name(character, "")
+    return (
+        name.startswith("CJK UNIFIED IDEOGRAPH-")
+        or name.startswith("CJK COMPATIBILITY IDEOGRAPH-")
+        or character == "〇"
+    )
+
+
 def detect_language(text):
-    return CHINESE if _CJK_RE.search(str(text)) else ENGLISH
+    return CHINESE if any(is_han_character(char) for char in str(text)) else ENGLISH
 
 
 def validate_language(value):
@@ -145,7 +166,21 @@ def validate_language(value):
 
 
 def chinese_metric_tokenize(text):
-    return _ZH_TOKEN_RE.findall(normalize_metric_text(text))
+    text = normalize_metric_text(text)
+    tokens = []
+    position = 0
+    while position < len(text):
+        if text[position].isspace():
+            position += 1
+            continue
+        match = _PROTECTED_TOKEN_RE.match(text, position)
+        if match:
+            tokens.append(match.group())
+            position = match.end()
+        else:
+            tokens.append(text[position])
+            position += 1
+    return tokens
 
 
 def partition_by_language(references, predictions, languages):
@@ -186,7 +221,7 @@ def format_metric_summary(
 
 Run: `python -m unittest tests.test_diagnose_evaluation -v`
 
-Expected: 5 tests PASS。
+Expected: 6 tests PASS。
 
 ### Task 2: 为 Excel 增加语言列
 
