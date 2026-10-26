@@ -1,0 +1,1800 @@
+id	true	pred
+1	Caries	Caries
+2	Pulpitis	Caries
+3	Pulpitis	Caries
+4	Gingivitis	Caries
+5	Pulpitis	Malocclusion
+6	Tooth Loss	Tooth Structure Loss
+7	Tooth Loss	Caries
+8	Malocclusion	Malocclusion
+9	Malocclusion	Malocclusion
+10	Tooth Loss	Malocclusion
+11	Pulpitis	Caries
+12	Tooth Structure Loss	Caries
+13	Pulpitis	Caries
+14	Pulpitis	Caries
+15	Malocclusion	Malocclusion
+16	Caries	Caries
+17	Caries	Caries
+18	Gingivitis	Gingivitis
+19	Caries	Malocclusion
+20	Caries	Caries
+21	Pulpitis	Pulpitis
+22	Gingivitis	Gingivitis
+23	Pulpitis	Caries
+24	Tooth Structure Loss	Malocclusion
+25	Gingivitis	Caries
+26	Tooth Structure Loss	Malocclusion
+27	Caries	Caries
+28	Tooth Loss	Caries
+29	Pulpitis	Caries
+30	Gingivitis	Caries
+31	Pulpitis	Caries
+32	Tooth Structure Loss	Caries
+33	Tooth Loss	Tooth Structure Loss
+34	Pulpitis	Caries
+35	Tooth Structure Loss	Malocclusion
+36	Tooth Loss	Tooth Loss
+37	Caries	Caries
+38	Malocclusion	Malocclusion
+39	Tooth Structure Loss	Caries
+40	Malocclusion	Malocclusion
+41	Gingivitis	Gingivitis
+42	Malocclusion	Malocclusion
+43	Tooth Loss	Tooth Structure Loss
+44	Gingivitis	Caries
+45	Gingivitis	Caries
+46	Pulpitis	Malocclusion
+47	Malocclusion	Malocclusion
+48	Tooth Loss	Tooth Loss
+49	Tooth Structure Loss	Malocclusion
+50	Tooth Structure Loss	Malocclusion
+51	Tooth Loss	Tooth Loss
+52	Pulpitis	Caries
+53	Tooth Structure Loss	Caries
+54	Tooth Structure Loss	Caries
+55	Tooth Loss	Malocclusion
+56	Tooth Loss	Caries
+57	Gingivitis	Gingivitis
+58	Caries	Malocclusion
+59	Tooth Structure Loss	Caries
+60	Tooth Structure Loss	Caries
+61	Tooth Structure Loss	Caries
+62	Malocclusion	Malocclusion
+63	Pulpitis	Caries
+64	Malocclusion	Malocclusion
+65	Tooth Loss	Tooth Loss
+66	Tooth Loss	Malocclusion
+67	Malocclusion	Malocclusion
+68	Malocclusion	Malocclusion
+69	Gingivitis	Caries
+70	Tooth Loss	Malocclusion
+71	Caries	Gingivitis
+72	Tooth Structure Loss	Caries
+73	Gingivitis	Caries
+74	Gingivitis	Gingivitis
+75	Caries	Caries
+76	Caries	Malocclusion
+77	Malocclusion	Malocclusion
+78	Tooth Loss	Malocclusion
+79	Gingivitis	Caries
+80	Tooth Structure Loss	Malocclusion
+81	Malocclusion	Malocclusion
+82	Pulpitis	Caries
+83	Pulpitis	Malocclusion
+84	Tooth Structure Loss	Tooth Loss
+85	Malocclusion	Malocclusion
+86	Gingivitis	Gingivitis
+87	Pulpitis	Pulpitis
+88	Caries	Malocclusion
+89	Tooth Loss	Malocclusion
+90	Caries	Malocclusion
+91	Pulpitis	Tooth Structure Loss
+92	Tooth Loss	Caries
+93	Caries	Caries
+94	Tooth Structure Loss	Caries
+95	Tooth Loss	Malocclusion
+96	Malocclusion	Malocclusion
+97	Malocclusion	Malocclusion
+98	Tooth Loss	Malocclusion
+99	Tooth Loss	Malocclusion
+100	Caries	Caries
+101	Pulpitis	Malocclusion
+102	Tooth Structure Loss	Caries
+103	Caries	Malocclusion
+104	Tooth Structure Loss	Caries
+105	Pulpitis	Caries
+106	Tooth Structure Loss	Malocclusion
+107	Gingivitis	Caries
+108	Malocclusion	Malocclusion
+109	Tooth Loss	Malocclusion
+110	Malocclusion	Malocclusion
+111	Gingivitis	Caries
+112	Pulpitis	Caries
+113	Gingivitis	Gingivitis
+114	Caries	Caries
+115	Gingivitis	Caries
+116	Gingivitis	Caries
+117	Pulpitis	Malocclusion
+118	Caries	Malocclusion
+119	Gingivitis	Caries
+120	Pulpitis	Caries
+121	Tooth Structure Loss	Caries
+122	Tooth Loss	Caries
+123	Pulpitis	Malocclusion
+124	Tooth Structure Loss	Tooth Loss
+125	Tooth Structure Loss	Malocclusion
+126	Tooth Loss	Tooth Loss
+127	Pulpitis	Caries
+128	Malocclusion	Malocclusion
+129	Tooth Loss	Caries
+130	Tooth Loss	Tooth Loss
+131	Caries	Caries
+132	Tooth Loss	Tooth Structure Loss
+133	Pulpitis	Pulpitis
+134	Malocclusion	Malocclusion
+135	Caries	Malocclusion
+136	Tooth Structure Loss	Malocclusion
+137	Malocclusion	Malocclusion
+138	Malocclusion	Malocclusion
+139	Caries	Malocclusion
+140	Pulpitis	Malocclusion
+141	Malocclusion	Malocclusion
+142	Gingivitis	Gingivitis
+143	Tooth Structure Loss	Caries
+144	Malocclusion	Malocclusion
+145	Gingivitis	Malocclusion
+146	Tooth Structure Loss	Malocclusion
+147	Tooth Loss	Malocclusion
+148	Malocclusion	Malocclusion
+149	Gingivitis	Caries
+150	Malocclusion	Malocclusion
+151	Tooth Loss	Malocclusion
+152	Caries	Caries
+153	Tooth Loss	Malocclusion
+154	Pulpitis	Malocclusion
+155	Tooth Loss	Malocclusion
+156	Malocclusion	Malocclusion
+157	Pulpitis	Caries
+158	Gingivitis	Gingivitis
+159	Caries	Malocclusion
+160	Caries	Caries
+161	Tooth Structure Loss	Caries
+162	Gingivitis	Gingivitis
+163	Pulpitis	Caries
+164	Gingivitis	Caries
+165	Gingivitis	Malocclusion
+166	Tooth Structure Loss	Caries
+167	Malocclusion	Malocclusion
+168	Tooth Structure Loss	Malocclusion
+169	Tooth Structure Loss	Caries
+170	Tooth Loss	Caries
+171	Malocclusion	Malocclusion
+172	Pulpitis	Malocclusion
+173	Pulpitis	Caries
+174	Tooth Structure Loss	Malocclusion
+175	Pulpitis	Tooth Loss
+176	Caries	Malocclusion
+177	Caries	Tooth Structure Loss
+178	Tooth Loss	Malocclusion
+179	Gingivitis	Gingivitis
+180	Tooth Loss	Tooth Loss
+181	Tooth Structure Loss	Caries
+182	Tooth Loss	Malocclusion
+183	Tooth Loss	Malocclusion
+184	Pulpitis	Pulpitis
+185	Caries	Caries
+186	Tooth Loss	Malocclusion
+187	Gingivitis	Caries
+188	Tooth Loss	Tooth Loss
+189	Caries	Caries
+190	Caries	Caries
+191	Pulpitis	Caries
+192	Tooth Loss	Caries
+193	Tooth Structure Loss	Gingivitis
+194	Tooth Structure Loss	Caries
+195	Caries	Caries
+196	Tooth Loss	Caries
+197	Malocclusion	Malocclusion
+198	Caries	Malocclusion
+199	Tooth Structure Loss	Malocclusion
+200	Malocclusion	Malocclusion
+201	Gingivitis	Gingivitis
+202	Malocclusion	Malocclusion
+203	Caries	Caries
+204	Pulpitis	Malocclusion
+205	Gingivitis	Malocclusion
+206	Caries	Malocclusion
+207	Caries	Caries
+208	Tooth Loss	Tooth Loss
+209	Tooth Loss	Gingivitis
+210	Gingivitis	Tooth Structure Loss
+211	Gingivitis	Caries
+212	Malocclusion	Malocclusion
+213	Tooth Loss	Malocclusion
+214	Malocclusion	Malocclusion
+215	Malocclusion	Malocclusion
+216	Caries	Caries
+217	Malocclusion	Malocclusion
+218	Pulpitis	Malocclusion
+219	Caries	Malocclusion
+220	Pulpitis	Malocclusion
+221	Gingivitis	Caries
+222	Tooth Structure Loss	Malocclusion
+223	Malocclusion	Malocclusion
+224	Malocclusion	Tooth Structure Loss
+225	Tooth Structure Loss	Malocclusion
+226	Tooth Structure Loss	Caries
+227	Gingivitis	Caries
+228	Gingivitis	Gingivitis
+229	Malocclusion	Malocclusion
+230	Tooth Loss	Malocclusion
+231	Tooth Loss	Tooth Loss
+232	Tooth Structure Loss	Caries
+233	Tooth Loss	Caries
+234	Caries	Malocclusion
+235	Pulpitis	Caries
+236	Tooth Loss	Tooth Loss
+237	Tooth Structure Loss	Malocclusion
+238	Tooth Structure Loss	Caries
+239	Tooth Structure Loss	Malocclusion
+240	Pulpitis	类别2
+241	Gingivitis	Gingivitis
+242	Malocclusion	Malocclusion
+243	Pulpitis	Malocclusion
+244	Malocclusion	Malocclusion
+245	Malocclusion	Malocclusion
+246	Tooth Structure Loss	Caries
+247	Tooth Structure Loss	Caries
+248	Tooth Structure Loss	Malocclusion
+249	Gingivitis	Gingivitis
+250	Tooth Structure Loss	Gingivitis
+251	Caries	Caries
+252	Caries	Caries
+253	Tooth Loss	Tooth Loss
+254	Malocclusion	Malocclusion
+255	Pulpitis	Malocclusion
+256	Caries	Tooth Structure Loss
+257	Caries	Caries
+258	Tooth Loss	Tooth Loss
+259	Malocclusion	Malocclusion
+260	Malocclusion	Malocclusion
+261	Malocclusion	Malocclusion
+262	Tooth Loss	Tooth Structure Loss
+263	Malocclusion	Malocclusion
+264	Caries	Malocclusion
+265	Tooth Structure Loss	Malocclusion
+266	Gingivitis	Caries
+267	Caries	Malocclusion
+268	Tooth Structure Loss	Malocclusion
+269	Pulpitis	Caries
+270	Caries	Caries
+271	Tooth Structure Loss	Malocclusion
+272	Tooth Structure Loss	Malocclusion
+273	Pulpitis	Malocclusion
+274	Pulpitis	Caries
+275	Malocclusion	Malocclusion
+276	Malocclusion	Malocclusion
+277	Gingivitis	Caries
+278	Caries	Malocclusion
+279	Pulpitis	Tooth Structure Loss
+280	Malocclusion	Malocclusion
+281	Tooth Structure Loss	Pulpitis
+282	Tooth Loss	Malocclusion
+283	Pulpitis	Caries
+284	Tooth Loss	Caries
+285	Tooth Loss	Tooth Loss
+286	Caries	Malocclusion
+287	Gingivitis	Caries
+288	Gingivitis	Caries
+289	Tooth Structure Loss	Malocclusion
+290	Caries	Malocclusion
+291	Tooth Structure Loss	Malocclusion
+292	Gingivitis	Gingivitis
+293	Malocclusion	Malocclusion
+294	Caries	Malocclusion
+295	Malocclusion	Malocclusion
+296	Gingivitis	Gingivitis
+297	Tooth Structure Loss	Malocclusion
+298	Tooth Structure Loss	Caries
+299	Caries	Caries
+300	Tooth Loss	Malocclusion
+301	Pulpitis	Caries
+302	Tooth Structure Loss	Caries
+303	Tooth Structure Loss	Malocclusion
+304	Gingivitis	Gingivitis
+305	Malocclusion	Malocclusion
+306	Malocclusion	Malocclusion
+307	Caries	Malocclusion
+308	Malocclusion	Malocclusion
+309	Caries	Malocclusion
+310	Tooth Loss	Caries
+311	Gingivitis	Caries
+312	Tooth Loss	Malocclusion
+313	Gingivitis	Gingivitis
+314	Pulpitis	Caries
+315	Pulpitis	Malocclusion
+316	Malocclusion	Malocclusion
+317	Gingivitis	Gingivitis
+318	Pulpitis	Malocclusion
+319	Malocclusion	Malocclusion
+320	Caries	Malocclusion
+321	Malocclusion	Malocclusion
+322	Caries	Caries
+323	Caries	Caries
+324	Pulpitis	Malocclusion
+325	Malocclusion	Malocclusion
+326	Pulpitis	Malocclusion
+327	Pulpitis	Malocclusion
+328	Tooth Loss	Malocclusion
+329	Tooth Structure Loss	Tooth Structure Loss
+330	Caries	Caries
+331	Malocclusion	Malocclusion
+332	Gingivitis	Gingivitis
+333	Pulpitis	Caries
+334	Tooth Structure Loss	Caries
+335	Tooth Structure Loss	Malocclusion
+336	Tooth Loss	Caries
+337	Caries	Caries
+338	Malocclusion	Malocclusion
+339	Caries	Caries
+340	Gingivitis	Gingivitis
+341	Malocclusion	Malocclusion
+342	Tooth Loss	Malocclusion
+343	Caries	Caries
+344	Malocclusion	Malocclusion
+345	Caries	Malocclusion
+346	Tooth Structure Loss	Malocclusion
+347	Pulpitis	Caries
+348	Caries	Malocclusion
+349	Pulpitis	Caries
+350	Caries	Caries
+351	Tooth Loss	Tooth Loss
+352	Pulpitis	Caries
+353	Tooth Structure Loss	Caries
+354	Tooth Structure Loss	Malocclusion
+355	Caries	Caries
+356	Tooth Loss	Tooth Loss
+357	Tooth Loss	Malocclusion
+358	Malocclusion	Malocclusion
+359	Tooth Loss	Caries
+360	Malocclusion	Malocclusion
+361	Malocclusion	Malocclusion
+362	Tooth Structure Loss	Malocclusion
+363	Tooth Loss	Malocclusion
+364	Tooth Loss	Malocclusion
+365	Gingivitis	Gingivitis
+366	Malocclusion	Malocclusion
+367	Tooth Structure Loss	Gingivitis
+368	Caries	Caries
+369	Caries	Caries
+370	Pulpitis	Caries
+371	Tooth Loss	Tooth Loss
+372	Malocclusion	Malocclusion
+373	Malocclusion	Malocclusion
+374	Pulpitis	Pulpitis
+375	Pulpitis	Caries
+376	Tooth Structure Loss	Malocclusion
+377	Gingivitis	Gingivitis
+378	Pulpitis	Caries
+379	Tooth Loss	Tooth Structure Loss
+380	Tooth Loss	Tooth Structure Loss
+381	Tooth Loss	Caries
+382	Malocclusion	Malocclusion
+383	Caries	Caries
+384	Malocclusion	Malocclusion
+385	Tooth Structure Loss	Caries
+386	Caries	Malocclusion
+387	Pulpitis	Caries
+388	Tooth Structure Loss	Caries
+389	Gingivitis	Gingivitis
+390	Tooth Structure Loss	Caries
+391	Caries	Caries
+392	Tooth Structure Loss	Malocclusion
+393	Malocclusion	Malocclusion
+394	Caries	Caries
+395	Gingivitis	Caries
+396	Malocclusion	Malocclusion
+397	Pulpitis	Malocclusion
+398	Pulpitis	Caries
+399	Gingivitis	Gingivitis
+400	Tooth Loss	Caries
+401	Gingivitis	Gingivitis
+402	Pulpitis	Caries
+403	Gingivitis	Caries
+404	Gingivitis	Gingivitis
+405	Tooth Loss	Tooth Loss
+406	Caries	Malocclusion
+407	Pulpitis	Tooth Structure Loss
+408	Tooth Structure Loss	Caries
+409	Caries	Malocclusion
+410	Gingivitis	Caries
+411	Tooth Loss	Gingivitis
+412	Tooth Structure Loss	Caries
+413	Malocclusion	Malocclusion
+414	Tooth Structure Loss	Malocclusion
+415	Pulpitis	Caries
+416	Gingivitis	Caries
+417	Gingivitis	Gingivitis
+418	Tooth Structure Loss	Caries
+419	Malocclusion	Malocclusion
+420	Tooth Structure Loss	Caries
+421	Caries	Caries
+422	Gingivitis	Gingivitis
+423	Pulpitis	Caries
+424	Gingivitis	Caries
+425	Pulpitis	Pulpitis
+426	Gingivitis	Caries
+427	Tooth Structure Loss	Malocclusion
+428	Tooth Loss	Tooth Loss
+429	Gingivitis	Malocclusion
+430	Gingivitis	Gingivitis
+431	Tooth Loss	Caries
+432	Pulpitis	Caries
+433	Tooth Loss	Caries
+434	Pulpitis	Tooth Structure Loss
+435	Tooth Structure Loss	Gingivitis
+436	Malocclusion	Malocclusion
+437	Malocclusion	Malocclusion
+438	Caries	Malocclusion
+439	Tooth Loss	Malocclusion
+440	Gingivitis	Gingivitis
+441	Pulpitis	Caries
+442	Gingivitis	Caries
+443	Pulpitis	Caries
+444	Malocclusion	Malocclusion
+445	Malocclusion	Malocclusion
+446	Tooth Loss	Gingivitis
+447	Malocclusion	Malocclusion
+448	Caries	Caries
+449	Gingivitis	Caries
+450	Gingivitis	Gingivitis
+451	Tooth Loss	Tooth Loss
+452	Tooth Loss	Tooth Loss
+453	Tooth Loss	Malocclusion
+454	Gingivitis	Caries
+455	Malocclusion	Malocclusion
+456	Tooth Structure Loss	Caries
+457	Caries	Malocclusion
+458	Tooth Loss	Caries
+459	Malocclusion	Malocclusion
+460	Malocclusion	Malocclusion
+461	Pulpitis	Caries
+462	Caries	Malocclusion
+463	Malocclusion	Malocclusion
+464	Caries	Malocclusion
+465	Gingivitis	Malocclusion
+466	Gingivitis	Gingivitis
+467	Gingivitis	Gingivitis
+468	Tooth Structure Loss	Malocclusion
+469	Pulpitis	Caries
+470	Pulpitis	Caries
+471	Gingivitis	Gingivitis
+472	Caries	Caries
+473	Tooth Structure Loss	Malocclusion
+474	Tooth Loss	Caries
+475	Caries	Caries
+476	Tooth Structure Loss	Caries
+477	Tooth Structure Loss	Caries
+478	Malocclusion	Malocclusion
+479	Caries	Caries
+480	Tooth Loss	Malocclusion
+481	Malocclusion	Malocclusion
+482	Gingivitis	Malocclusion
+483	Pulpitis	Malocclusion
+484	Tooth Loss	Malocclusion
+485	Pulpitis	Caries
+486	Pulpitis	Malocclusion
+487	Tooth Structure Loss	Caries
+488	Malocclusion	Malocclusion
+489	Gingivitis	Caries
+490	Caries	Caries
+491	Caries	Caries
+492	Gingivitis	Caries
+493	Gingivitis	Gingivitis
+494	Caries	Malocclusion
+495	Gingivitis	Caries
+496	Gingivitis	Gingivitis
+497	Caries	Malocclusion
+498	Tooth Structure Loss	Malocclusion
+499	Malocclusion	Malocclusion
+500	Caries	Caries
+501	Pulpitis	Malocclusion
+502	Malocclusion	Malocclusion
+503	Tooth Loss	Malocclusion
+504	Tooth Loss	Malocclusion
+505	Gingivitis	Malocclusion
+506	Malocclusion	Malocclusion
+507	Tooth Structure Loss	Malocclusion
+508	Tooth Loss	Malocclusion
+509	Tooth Structure Loss	Malocclusion
+510	Caries	Caries
+511	Tooth Structure Loss	Malocclusion
+512	Gingivitis	Gingivitis
+513	Caries	Caries
+514	Pulpitis	Caries
+515	Tooth Loss	Malocclusion
+516	Malocclusion	Malocclusion
+517	Caries	Malocclusion
+518	Malocclusion	Malocclusion
+519	Tooth Loss	Tooth Loss
+520	Tooth Structure Loss	Malocclusion
+521	Malocclusion	Malocclusion
+522	Caries	Gingivitis
+523	Pulpitis	Caries
+524	Tooth Structure Loss	Caries
+525	Malocclusion	Malocclusion
+526	Tooth Loss	Tooth Structure Loss
+527	Malocclusion	Malocclusion
+528	Pulpitis	Caries
+529	Tooth Loss	Tooth Loss
+530	Caries	Caries
+531	Gingivitis	Caries
+532	Pulpitis	Caries
+533	Pulpitis	Malocclusion
+534	Pulpitis	Malocclusion
+535	Gingivitis	Caries
+536	Tooth Structure Loss	Malocclusion
+537	Gingivitis	Caries
+538	Tooth Loss	Gingivitis
+539	Pulpitis	Caries
+540	Pulpitis	Caries
+541	Gingivitis	Caries
+542	Tooth Structure Loss	Malocclusion
+543	Pulpitis	Caries
+544	Pulpitis	Tooth Structure Loss
+545	Caries	Caries
+546	Tooth Structure Loss	Malocclusion
+547	Tooth Loss	Malocclusion
+548	Gingivitis	Caries
+549	Tooth Loss	Tooth Loss
+550	Pulpitis	Caries
+551	Pulpitis	Caries
+552	Malocclusion	Malocclusion
+553	Pulpitis	Caries
+554	Gingivitis	Caries
+555	Tooth Loss	Tooth Loss
+556	Tooth Structure Loss	Malocclusion
+557	Tooth Loss	Tooth Structure Loss
+558	Pulpitis	Caries
+559	Malocclusion	Malocclusion
+560	Pulpitis	Caries
+561	Caries	Caries
+562	Caries	Malocclusion
+563	Tooth Structure Loss	Malocclusion
+564	Pulpitis	Caries
+565	Malocclusion	Malocclusion
+566	Gingivitis	Caries
+567	Tooth Loss	Tooth Loss
+568	Pulpitis	Caries
+569	Malocclusion	Malocclusion
+570	Tooth Loss	Malocclusion
+571	Caries	Caries
+572	Gingivitis	Caries
+573	Pulpitis	Caries
+574	Tooth Structure Loss	Caries
+575	Caries	Gingivitis
+576	Tooth Structure Loss	Caries
+577	Tooth Loss	Caries
+578	Tooth Structure Loss	Caries
+579	Gingivitis	Gingivitis
+580	Tooth Structure Loss	Caries
+581	Tooth Loss	Tooth Structure Loss
+582	Malocclusion	Malocclusion
+583	Malocclusion	Malocclusion
+584	Tooth Structure Loss	Caries
+585	Malocclusion	Malocclusion
+586	Caries	Caries
+587	Pulpitis	Caries
+588	Caries	Caries
+589	Caries	Caries
+590	Pulpitis	Caries
+591	Caries	Caries
+592	Tooth Loss	Malocclusion
+593	Gingivitis	Caries
+594	Caries	Caries
+595	Caries	Caries
+596	Gingivitis	Caries
+597	Tooth Loss	Caries
+598	Caries	Malocclusion
+599	Gingivitis	Caries
+600	Tooth Loss	Tooth Loss
+601	Pulpitis	Malocclusion
+602	Caries	Malocclusion
+603	Malocclusion	Malocclusion
+604	Malocclusion	Malocclusion
+605	Gingivitis	Caries
+606	Pulpitis	Pulpitis
+607	Malocclusion	Malocclusion
+608	Malocclusion	Malocclusion
+609	Caries	Malocclusion
+610	Caries	Malocclusion
+611	Caries	Malocclusion
+612	Pulpitis	Caries
+613	Gingivitis	Caries
+614	Malocclusion	Malocclusion
+615	Caries	Malocclusion
+616	Pulpitis	Caries
+617	Pulpitis	Caries
+618	Caries	Gingivitis
+619	Pulpitis	Malocclusion
+620	Caries	Malocclusion
+621	Tooth Loss	Gingivitis
+622	Caries	Caries
+623	Gingivitis	Gingivitis
+624	Malocclusion	Malocclusion
+625	Tooth Loss	Malocclusion
+626	Tooth Structure Loss	Malocclusion
+627	Tooth Structure Loss	Malocclusion
+628	Pulpitis	Pulpitis
+629	Pulpitis	Caries
+630	Malocclusion	Malocclusion
+631	Gingivitis	Caries
+632	Gingivitis	Gingivitis
+633	Pulpitis	Pulpitis
+634	Gingivitis	Gingivitis
+635	Pulpitis	Caries
+636	Tooth Loss	Malocclusion
+637	Tooth Structure Loss	Caries
+638	Caries	Malocclusion
+639	Tooth Structure Loss	Pulpitis
+640	Malocclusion	Malocclusion
+641	Malocclusion	Malocclusion
+642	Caries	Caries
+643	Caries	Malocclusion
+644	Tooth Loss	Caries
+645	Pulpitis	Malocclusion
+646	Gingivitis	Gingivitis
+647	Gingivitis	Gingivitis
+648	Pulpitis	Malocclusion
+649	Malocclusion	Malocclusion
+650	Caries	Caries
+651	Pulpitis	Caries
+652	Gingivitis	Gingivitis
+653	Tooth Loss	Tooth Structure Loss
+654	Tooth Structure Loss	Malocclusion
+655	Tooth Loss	Caries
+656	Gingivitis	Gingivitis
+657	Pulpitis	Pulpitis
+658	Malocclusion	Malocclusion
+659	Pulpitis	Caries
+660	Malocclusion	Malocclusion
+661	Tooth Structure Loss	Malocclusion
+662	Tooth Loss	Gingivitis
+663	Caries	Caries
+664	Pulpitis	Caries
+665	Pulpitis	Pulpitis
+666	Caries	Malocclusion
+667	Tooth Structure Loss	Malocclusion
+668	Tooth Loss	Caries
+669	Pulpitis	Malocclusion
+670	Pulpitis	Caries
+671	Tooth Loss	Malocclusion
+672	Tooth Structure Loss	Malocclusion
+673	Caries	Malocclusion
+674	Caries	Caries
+675	Malocclusion	Malocclusion
+676	Malocclusion	Malocclusion
+677	Tooth Loss	Caries
+678	Tooth Structure Loss	Malocclusion
+679	Gingivitis	Malocclusion
+680	Pulpitis	Caries
+681	Tooth Loss	Caries
+682	Tooth Loss	Tooth Loss
+683	Tooth Loss	Caries
+684	Tooth Loss	Malocclusion
+685	Gingivitis	Caries
+686	Pulpitis	Caries
+687	Tooth Loss	Caries
+688	Pulpitis	Caries
+689	Tooth Structure Loss	Malocclusion
+690	Tooth Structure Loss	Caries
+691	Caries	Malocclusion
+692	Pulpitis	Malocclusion
+693	Caries	Malocclusion
+694	Pulpitis	Malocclusion
+695	Malocclusion	Malocclusion
+696	Gingivitis	Caries
+697	Caries	Caries
+698	Tooth Structure Loss	Caries
+699	Gingivitis	Caries
+700	Caries	Malocclusion
+701	Gingivitis	Caries
+702	Tooth Structure Loss	Tooth Loss
+703	Caries	Malocclusion
+704	Gingivitis	Gingivitis
+705	Tooth Loss	Malocclusion
+706	Tooth Loss	Tooth Loss
+707	Caries	Malocclusion
+708	Gingivitis	Gingivitis
+709	Tooth Loss	Tooth Loss
+710	Tooth Loss	Malocclusion
+711	Tooth Structure Loss	Malocclusion
+712	Tooth Loss	Malocclusion
+713	Caries	Caries
+714	Pulpitis	Malocclusion
+715	Tooth Loss	Malocclusion
+716	Tooth Structure Loss	Malocclusion
+717	Caries	Caries
+718	Malocclusion	Malocclusion
+719	Caries	Caries
+720	Malocclusion	Malocclusion
+721	Gingivitis	Gingivitis
+722	Gingivitis	Caries
+723	Tooth Loss	Malocclusion
+724	Tooth Structure Loss	Malocclusion
+725	Pulpitis	Caries
+726	Caries	Malocclusion
+727	Tooth Structure Loss	Malocclusion
+728	Tooth Loss	Caries
+729	Gingivitis	Gingivitis
+730	Tooth Loss	Malocclusion
+731	Pulpitis	Caries
+732	Caries	Malocclusion
+733	Malocclusion	Malocclusion
+734	Malocclusion	Malocclusion
+735	Tooth Loss	Caries
+736	Tooth Loss	Tooth Loss
+737	Pulpitis	Malocclusion
+738	Gingivitis	Caries
+739	Gingivitis	Caries
+740	Tooth Structure Loss	Caries
+741	Tooth Structure Loss	Caries
+742	Malocclusion	Malocclusion
+743	Caries	Malocclusion
+744	Pulpitis	Caries
+745	Pulpitis	Caries
+746	Tooth Loss	Tooth Loss
+747	Tooth Structure Loss	Malocclusion
+748	Gingivitis	Caries
+749	Gingivitis	Caries
+750	Gingivitis	Gingivitis
+751	Gingivitis	Gingivitis
+752	Gingivitis	Caries
+753	Gingivitis	Gingivitis
+754	Pulpitis	Caries
+755	Caries	Malocclusion
+756	Tooth Loss	Caries
+757	Gingivitis	Caries
+758	Gingivitis	Gingivitis
+759	Malocclusion	Malocclusion
+760	Tooth Loss	Caries
+761	Malocclusion	Malocclusion
+762	Caries	Caries
+763	Pulpitis	Caries
+764	Tooth Structure Loss	Malocclusion
+765	Tooth Loss	Tooth Loss
+766	Tooth Structure Loss	Malocclusion
+767	Malocclusion	Malocclusion
+768	Tooth Loss	Tooth Loss
+769	Pulpitis	Malocclusion
+770	Gingivitis	Tooth Structure Loss
+771	Malocclusion	Malocclusion
+772	Malocclusion	Malocclusion
+773	Tooth Loss	Tooth Loss
+774	Gingivitis	Caries
+775	Tooth Structure Loss	Gingivitis
+776	Malocclusion	Malocclusion
+777	Malocclusion	Malocclusion
+778	Malocclusion	Malocclusion
+779	Pulpitis	Gingivitis
+780	Pulpitis	Malocclusion
+781	Gingivitis	Gingivitis
+782	Tooth Structure Loss	Caries
+783	Tooth Structure Loss	Tooth Loss
+784	Pulpitis	Malocclusion
+785	Tooth Loss	Gingivitis
+786	Pulpitis	Caries
+787	Caries	Malocclusion
+788	Caries	Malocclusion
+789	Pulpitis	Caries
+790	Tooth Structure Loss	Malocclusion
+791	Pulpitis	Malocclusion
+792	Caries	Caries
+793	Tooth Loss	Tooth Structure Loss
+794	Gingivitis	Gingivitis
+795	Gingivitis	Gingivitis
+796	Malocclusion	Gingivitis
+797	Gingivitis	Caries
+798	Caries	Caries
+799	Caries	Malocclusion
+800	Malocclusion	Malocclusion
+801	Pulpitis	Caries
+802	Tooth Structure Loss	Caries
+803	Pulpitis	Malocclusion
+804	Caries	Malocclusion
+805	Malocclusion	Malocclusion
+806	Malocclusion	Malocclusion
+807	Gingivitis	Gingivitis
+808	Tooth Loss	Malocclusion
+809	Malocclusion	Malocclusion
+810	Gingivitis	Gingivitis
+811	Tooth Structure Loss	Malocclusion
+812	Tooth Loss	Tooth Loss
+813	Pulpitis	Caries
+814	Pulpitis	Pulpitis
+815	Tooth Loss	Tooth Loss
+816	Gingivitis	Gingivitis
+817	Caries	Malocclusion
+818	Tooth Loss	Malocclusion
+819	Malocclusion	Malocclusion
+820	Pulpitis	Caries
+821	Pulpitis	Pulpitis
+822	Malocclusion	Malocclusion
+823	Caries	Caries
+824	Tooth Loss	Caries
+825	Tooth Structure Loss	Caries
+826	Gingivitis	Malocclusion
+827	Pulpitis	Caries
+828	Tooth Loss	Malocclusion
+829	Tooth Loss	Tooth Structure Loss
+830	Tooth Loss	Malocclusion
+831	Tooth Loss	Caries
+832	Caries	Malocclusion
+833	Malocclusion	Malocclusion
+834	Pulpitis	Caries
+835	Tooth Loss	Tooth Loss
+836	Tooth Loss	Malocclusion
+837	Caries	Caries
+838	Tooth Loss	Tooth Loss
+839	Malocclusion	Malocclusion
+840	Caries	Malocclusion
+841	Gingivitis	Gingivitis
+842	Tooth Loss	Tooth Loss
+843	Caries	Caries
+844	Tooth Structure Loss	Gingivitis
+845	Malocclusion	Malocclusion
+846	Malocclusion	Malocclusion
+847	Gingivitis	Gingivitis
+848	Tooth Structure Loss	Malocclusion
+849	Caries	Malocclusion
+850	Caries	Malocclusion
+851	Malocclusion	Malocclusion
+852	Pulpitis	Caries
+853	Caries	Malocclusion
+854	Caries	Malocclusion
+855	Caries	Malocclusion
+856	Caries	Malocclusion
+857	Malocclusion	Malocclusion
+858	Tooth Loss	Malocclusion
+859	Pulpitis	Caries
+860	Pulpitis	Caries
+861	Malocclusion	Malocclusion
+862	Malocclusion	Malocclusion
+863	Tooth Structure Loss	Malocclusion
+864	Pulpitis	Caries
+865	Tooth Loss	Tooth Loss
+866	Tooth Loss	Tooth Loss
+867	Caries	Caries
+868	Pulpitis	Caries
+869	Gingivitis	Caries
+870	Malocclusion	Malocclusion
+871	Caries	Caries
+872	Malocclusion	Malocclusion
+873	Caries	Malocclusion
+874	Pulpitis	Caries
+875	Caries	Caries
+876	Caries	Malocclusion
+877	Caries	Caries
+878	Malocclusion	Malocclusion
+879	Gingivitis	Caries
+880	Caries	Malocclusion
+881	Caries	Caries
+882	Gingivitis	Tooth Structure Loss
+883	Pulpitis	Caries
+884	Malocclusion	Malocclusion
+885	Gingivitis	Caries
+886	Tooth Structure Loss	Malocclusion
+887	Malocclusion	Malocclusion
+888	Caries	Caries
+889	Caries	Malocclusion
+890	Pulpitis	Caries
+891	Gingivitis	Gingivitis
+892	Malocclusion	Malocclusion
+893	Gingivitis	Gingivitis
+894	Gingivitis	Caries
+895	Pulpitis	Caries
+896	Malocclusion	Malocclusion
+897	Tooth Structure Loss	Malocclusion
+898	Tooth Loss	Malocclusion
+899	Caries	Caries
+900	Caries	Malocclusion
+901	Gingivitis	Gingivitis
+902	Tooth Loss	Tooth Loss
+903	Caries	Caries
+904	Malocclusion	Malocclusion
+905	Pulpitis	Caries
+906	Tooth Loss	Tooth Loss
+907	Pulpitis	Tooth Structure Loss
+908	Gingivitis	Gingivitis
+909	Gingivitis	Caries
+910	Caries	Caries
+911	Pulpitis	Caries
+912	Tooth Structure Loss	Malocclusion
+913	Malocclusion	Malocclusion
+914	Caries	Malocclusion
+915	Malocclusion	Malocclusion
+916	Tooth Structure Loss	Caries
+917	Caries	Malocclusion
+918	Tooth Structure Loss	Malocclusion
+919	Gingivitis	Caries
+920	Gingivitis	Gingivitis
+921	Tooth Structure Loss	Malocclusion
+922	Tooth Structure Loss	Malocclusion
+923	Tooth Loss	Tooth Structure Loss
+924	Caries	Caries
+925	Malocclusion	Malocclusion
+926	Pulpitis	Malocclusion
+927	Tooth Loss	Malocclusion
+928	Caries	Malocclusion
+929	Tooth Structure Loss	Caries
+930	Gingivitis	Tooth Structure Loss
+931	Pulpitis	Gingivitis
+932	Tooth Loss	Malocclusion
+933	Caries	Caries
+934	Pulpitis	Caries
+935	Gingivitis	Gingivitis
+936	Malocclusion	Malocclusion
+937	Gingivitis	Gingivitis
+938	Caries	Caries
+939	Tooth Structure Loss	Caries
+940	Tooth Structure Loss	Caries
+941	Pulpitis	Malocclusion
+942	Pulpitis	Caries
+943	Gingivitis	Caries
+944	Tooth Structure Loss	Malocclusion
+945	Tooth Structure Loss	Caries
+946	Pulpitis	Malocclusion
+947	Caries	Malocclusion
+948	Gingivitis	Caries
+949	Gingivitis	Tooth Structure Loss
+950	Malocclusion	Malocclusion
+951	Tooth Structure Loss	Malocclusion
+952	Gingivitis	Gingivitis
+953	Gingivitis	Gingivitis
+954	Caries	Malocclusion
+955	Pulpitis	Caries
+956	Tooth Structure Loss	Malocclusion
+957	Tooth Structure Loss	Caries
+958	Pulpitis	Malocclusion
+959	Pulpitis	Caries
+960	Tooth Loss	Malocclusion
+961	Caries	Caries
+962	Pulpitis	Tooth Structure Loss
+963	Caries	Malocclusion
+964	Gingivitis	Gingivitis
+965	Tooth Structure Loss	Malocclusion
+966	Tooth Structure Loss	Caries
+967	Tooth Structure Loss	Caries
+968	Tooth Loss	Tooth Structure Loss
+969	Tooth Structure Loss	Malocclusion
+970	Malocclusion	Malocclusion
+971	Tooth Loss	Tooth Loss
+972	Pulpitis	Malocclusion
+973	Gingivitis	Tooth Structure Loss
+974	Malocclusion	Malocclusion
+975	Tooth Structure Loss	Malocclusion
+976	Gingivitis	Gingivitis
+977	Tooth Loss	Tooth Loss
+978	Pulpitis	Caries
+979	Gingivitis	Tooth Structure Loss
+980	Pulpitis	Caries
+981	Tooth Structure Loss	Gingivitis
+982	Tooth Loss	Malocclusion
+983	Gingivitis	Caries
+984	Tooth Loss	Gingivitis
+985	Pulpitis	Caries
+986	Caries	Malocclusion
+987	Tooth Structure Loss	Caries
+988	Gingivitis	Caries
+989	Caries	Caries
+990	Tooth Structure Loss	Caries
+991	Pulpitis	Malocclusion
+992	Gingivitis	Gingivitis
+993	Tooth Loss	Gingivitis
+994	Caries	Caries
+995	Pulpitis	Pulpitis
+996	Tooth Loss	Malocclusion
+997	Tooth Structure Loss	Caries
+998	Tooth Structure Loss	Caries
+999	Tooth Loss	Tooth Structure Loss
+1000	Tooth Loss	Caries
+1001	Malocclusion	Malocclusion
+1002	Caries	Malocclusion
+1003	Tooth Loss	Malocclusion
+1004	Tooth Loss	Caries
+1005	Tooth Structure Loss	Caries
+1006	Tooth Structure Loss	Pulpitis
+1007	Tooth Loss	Malocclusion
+1008	Malocclusion	Malocclusion
+1009	Pulpitis	Caries
+1010	Caries	Malocclusion
+1011	Caries	Caries
+1012	Tooth Loss	Caries
+1013	Gingivitis	Gingivitis
+1014	Tooth Loss	Caries
+1015	Gingivitis	Gingivitis
+1016	Malocclusion	Malocclusion
+1017	Malocclusion	Malocclusion
+1018	Tooth Loss	Tooth Structure Loss
+1019	Gingivitis	Malocclusion
+1020	Tooth Structure Loss	Malocclusion
+1021	Malocclusion	Malocclusion
+1022	Caries	Caries
+1023	Malocclusion	Malocclusion
+1024	Tooth Loss	Caries
+1025	Gingivitis	Malocclusion
+1026	Gingivitis	Gingivitis
+1027	Pulpitis	Caries
+1028	Pulpitis	Caries
+1029	Gingivitis	Caries
+1030	Malocclusion	Malocclusion
+1031	Pulpitis	Caries
+1032	Caries	Malocclusion
+1033	Gingivitis	Gingivitis
+1034	Pulpitis	Caries
+1035	Pulpitis	Caries
+1036	Tooth Structure Loss	Malocclusion
+1037	Pulpitis	Malocclusion
+1038	Caries	Caries
+1039	Tooth Loss	Caries
+1040	Pulpitis	Caries
+1041	Pulpitis	Caries
+1042	Tooth Structure Loss	Malocclusion
+1043	Caries	Malocclusion
+1044	Caries	Caries
+1045	Tooth Structure Loss	Caries
+1046	Caries	Malocclusion
+1047	Gingivitis	Tooth Structure Loss
+1048	Gingivitis	Caries
+1049	Malocclusion	Malocclusion
+1050	Pulpitis	Caries
+1051	Caries	Malocclusion
+1052	Malocclusion	Malocclusion
+1053	Pulpitis	Caries
+1054	Tooth Loss	Caries
+1055	Gingivitis	Gingivitis
+1056	Tooth Loss	Malocclusion
+1057	Tooth Structure Loss	Caries
+1058	Tooth Loss	Malocclusion
+1059	Malocclusion	Malocclusion
+1060	Tooth Structure Loss	Malocclusion
+1061	Gingivitis	Gingivitis
+1062	Tooth Loss	Malocclusion
+1063	Gingivitis	Gingivitis
+1064	Tooth Structure Loss	Caries
+1065	Pulpitis	Pulpitis
+1066	Caries	Caries
+1067	Tooth Structure Loss	Malocclusion
+1068	Malocclusion	Malocclusion
+1069	Tooth Loss	Caries
+1070	Tooth Loss	Malocclusion
+1071	Caries	Malocclusion
+1072	Tooth Loss	Malocclusion
+1073	Tooth Structure Loss	Malocclusion
+1074	Malocclusion	Malocclusion
+1075	Tooth Loss	Caries
+1076	Tooth Loss	Malocclusion
+1077	Caries	Malocclusion
+1078	Tooth Structure Loss	Malocclusion
+1079	Tooth Loss	Caries
+1080	Caries	Tooth Structure Loss
+1081	Tooth Structure Loss	Tooth Loss
+1082	Malocclusion	Malocclusion
+1083	Gingivitis	Gingivitis
+1084	Tooth Structure Loss	Malocclusion
+1085	Tooth Loss	Malocclusion
+1086	Tooth Loss	Tooth Loss
+1087	Tooth Loss	Caries
+1088	Tooth Structure Loss	Tooth Loss
+1089	Gingivitis	Malocclusion
+1090	Gingivitis	Gingivitis
+1091	Malocclusion	Malocclusion
+1092	Gingivitis	Tooth Structure Loss
+1093	Gingivitis	Gingivitis
+1094	Gingivitis	Caries
+1095	Pulpitis	Caries
+1096	Tooth Structure Loss	Caries
+1097	Pulpitis	Caries
+1098	Pulpitis	Malocclusion
+1099	Tooth Structure Loss	Caries
+1100	Tooth Loss	Malocclusion
+1101	Tooth Structure Loss	Caries
+1102	Tooth Loss	Caries
+1103	Gingivitis	Gingivitis
+1104	Caries	Gingivitis
+1105	Tooth Loss	Gingivitis
+1106	Gingivitis	Gingivitis
+1107	Pulpitis	Pulpitis
+1108	Malocclusion	Malocclusion
+1109	Tooth Structure Loss	Caries
+1110	Tooth Loss	Caries
+1111	Tooth Structure Loss	Caries
+1112	Tooth Structure Loss	Tooth Loss
+1113	Malocclusion	Malocclusion
+1114	Caries	Caries
+1115	Tooth Structure Loss	Caries
+1116	Tooth Structure Loss	Tooth Loss
+1117	Pulpitis	Caries
+1118	Gingivitis	Gingivitis
+1119	Malocclusion	Malocclusion
+1120	Tooth Loss	Malocclusion
+1121	Malocclusion	Malocclusion
+1122	Pulpitis	Malocclusion
+1123	Pulpitis	Caries
+1124	Gingivitis	Gingivitis
+1125	Pulpitis	Malocclusion
+1126	Tooth Loss	Tooth Loss
+1127	Malocclusion	Malocclusion
+1128	Tooth Loss	Malocclusion
+1129	Gingivitis	Caries
+1130	Gingivitis	Caries
+1131	Pulpitis	Caries
+1132	Tooth Loss	Tooth Loss
+1133	Malocclusion	Malocclusion
+1134	Tooth Structure Loss	Malocclusion
+1135	Gingivitis	Gingivitis
+1136	Pulpitis	Pulpitis
+1137	Tooth Structure Loss	Malocclusion
+1138	Tooth Loss	Malocclusion
+1139	Caries	Malocclusion
+1140	Caries	Malocclusion
+1141	Gingivitis	Caries
+1142	Tooth Loss	Caries
+1143	Malocclusion	Malocclusion
+1144	Tooth Structure Loss	Pulpitis
+1145	Tooth Structure Loss	Caries
+1146	Malocclusion	Malocclusion
+1147	Malocclusion	Malocclusion
+1148	Tooth Loss	Tooth Structure Loss
+1149	Malocclusion	Malocclusion
+1150	Malocclusion	Malocclusion
+1151	Pulpitis	Tooth Structure Loss
+1152	Pulpitis	Caries
+1153	Malocclusion	Malocclusion
+1154	Tooth Structure Loss	Malocclusion
+1155	Malocclusion	Malocclusion
+1156	Malocclusion	Malocclusion
+1157	Pulpitis	Caries
+1158	Caries	Malocclusion
+1159	Malocclusion	Malocclusion
+1160	Malocclusion	Malocclusion
+1161	Tooth Structure Loss	Malocclusion
+1162	Caries	Malocclusion
+1163	Tooth Structure Loss	Caries
+1164	Caries	Malocclusion
+1165	Tooth Structure Loss	Caries
+1166	Pulpitis	Malocclusion
+1167	Gingivitis	Caries
+1168	Caries	Malocclusion
+1169	Malocclusion	Malocclusion
+1170	Gingivitis	Caries
+1171	Pulpitis	Caries
+1172	Caries	Malocclusion
+1173	Caries	Caries
+1174	Gingivitis	Malocclusion
+1175	Tooth Structure Loss	Caries
+1176	Malocclusion	Malocclusion
+1177	Gingivitis	Gingivitis
+1178	Caries	Caries
+1179	Pulpitis	Caries
+1180	Tooth Structure Loss	Malocclusion
+1181	Caries	Malocclusion
+1182	Gingivitis	Caries
+1183	Tooth Structure Loss	Malocclusion
+1184	Tooth Structure Loss	Malocclusion
+1185	Pulpitis	Caries
+1186	Gingivitis	Gingivitis
+1187	Gingivitis	Caries
+1188	Pulpitis	Caries
+1189	Tooth Loss	Malocclusion
+1190	Tooth Structure Loss	Caries
+1191	Caries	Malocclusion
+1192	Caries	Caries
+1193	Tooth Loss	Tooth Loss
+1194	Tooth Structure Loss	Gingivitis
+1195	Malocclusion	Malocclusion
+1196	Tooth Loss	Tooth Structure Loss
+1197	Malocclusion	Malocclusion
+1198	Pulpitis	Tooth Structure Loss
+1199	Tooth Structure Loss	Caries
+1200	Gingivitis	Caries
+1201	Pulpitis	Malocclusion
+1202	Malocclusion	Caries
+1203	Tooth Loss	Tooth Loss
+1204	Tooth Structure Loss	Caries
+1205	Pulpitis	Caries
+1206	Tooth Structure Loss	Caries
+1207	Pulpitis	Malocclusion
+1208	Caries	Caries
+1209	Caries	Caries
+1210	Malocclusion	Malocclusion
+1211	Pulpitis	Caries
+1212	Caries	Malocclusion
+1213	Tooth Loss	Tooth Loss
+1214	Tooth Structure Loss	Caries
+1215	Tooth Loss	Tooth Loss
+1216	Tooth Structure Loss	Caries
+1217	Caries	Malocclusion
+1218	Tooth Structure Loss	Caries
+1219	Caries	Caries
+1220	Pulpitis	Malocclusion
+1221	Gingivitis	Malocclusion
+1222	Malocclusion	Malocclusion
+1223	Malocclusion	Malocclusion
+1224	Tooth Structure Loss	Caries
+1225	Pulpitis	Caries
+1226	Malocclusion	Tooth Loss
+1227	Tooth Loss	Malocclusion
+1228	Tooth Loss	Malocclusion
+1229	Tooth Loss	Malocclusion
+1230	Tooth Loss	Malocclusion
+1231	Caries	Malocclusion
+1232	Caries	Caries
+1233	Tooth Loss	Tooth Loss
+1234	Pulpitis	Caries
+1235	Gingivitis	Gingivitis
+1236	Malocclusion	Malocclusion
+1237	Tooth Structure Loss	Caries
+1238	Tooth Loss	Tooth Loss
+1239	Pulpitis	Caries
+1240	Gingivitis	Malocclusion
+1241	Malocclusion	Malocclusion
+1242	Gingivitis	Caries
+1243	Tooth Loss	Tooth Loss
+1244	Tooth Structure Loss	Malocclusion
+1245	Malocclusion	Malocclusion
+1246	Caries	Caries
+1247	Caries	Malocclusion
+1248	Gingivitis	Gingivitis
+1249	Tooth Structure Loss	Malocclusion
+1250	Tooth Structure Loss	Caries
+1251	Malocclusion	Malocclusion
+1252	Malocclusion	Malocclusion
+1253	Pulpitis	Malocclusion
+1254	Malocclusion	Caries
+1255	Gingivitis	Malocclusion
+1256	Caries	Caries
+1257	Tooth Loss	Caries
+1258	Malocclusion	Malocclusion
+1259	Tooth Structure Loss	Malocclusion
+1260	Malocclusion	Malocclusion
+1261	Gingivitis	Caries
+1262	Pulpitis	Caries
+1263	Pulpitis	Caries
+1264	Tooth Loss	Tooth Loss
+1265	Tooth Loss	Caries
+1266	Caries	Malocclusion
+1267	Pulpitis	Caries
+1268	Tooth Structure Loss	Caries
+1269	Tooth Loss	Malocclusion
+1270	Malocclusion	Malocclusion
+1271	Caries	Caries
+1272	Caries	Malocclusion
+1273	Gingivitis	Gingivitis
+1274	Caries	Malocclusion
+1275	Caries	Caries
+1276	Tooth Structure Loss	Malocclusion
+1277	Gingivitis	Gingivitis
+1278	Gingivitis	Caries
+1279	Pulpitis	Tooth Structure Loss
+1280	Caries	Caries
+1281	Gingivitis	Gingivitis
+1282	Malocclusion	Malocclusion
+1283	Malocclusion	Malocclusion
+1284	Tooth Structure Loss	Caries
+1285	Pulpitis	Caries
+1286	Pulpitis	Caries
+1287	Gingivitis	Tooth Structure Loss
+1288	Tooth Loss	Tooth Loss
+1289	Gingivitis	Gingivitis
+1290	Tooth Structure Loss	Caries
+1291	Gingivitis	Caries
+1292	Gingivitis	Gingivitis
+1293	Tooth Loss	Malocclusion
+1294	Tooth Loss	Caries
+1295	Pulpitis	Pulpitis
+1296	Tooth Loss	Caries
+1297	Tooth Loss	Malocclusion
+1298	Pulpitis	Caries
+1299	Gingivitis	Malocclusion
+1300	Pulpitis	Caries
+1301	Tooth Loss	Tooth Loss
+1302	Tooth Loss	Caries
+1303	Malocclusion	Malocclusion
+1304	Malocclusion	Malocclusion
+1305	Tooth Structure Loss	Caries
+1306	Caries	Malocclusion
+1307	Caries	Malocclusion
+1308	Malocclusion	Malocclusion
+1309	Tooth Loss	Tooth Loss
+1310	Gingivitis	Gingivitis
+1311	Gingivitis	Caries
+1312	Tooth Loss	Malocclusion
+1313	Malocclusion	Malocclusion
+1314	Caries	Malocclusion
+1315	Tooth Structure Loss	Caries
+1316	Gingivitis	Malocclusion
+1317	Caries	Malocclusion
+1318	Malocclusion	Malocclusion
+1319	Malocclusion	Malocclusion
+1320	Pulpitis	Caries
+1321	Caries	Caries
+1322	Tooth Structure Loss	Malocclusion
+1323	Tooth Structure Loss	Malocclusion
+1324	Pulpitis	Caries
+1325	Tooth Structure Loss	Caries
+1326	Malocclusion	Malocclusion
+1327	Malocclusion	Malocclusion
+1328	Pulpitis	Caries
+1329	Gingivitis	Caries
+1330	Tooth Loss	Tooth Loss
+1331	Tooth Structure Loss	Caries
+1332	Pulpitis	Pulpitis
+1333	Malocclusion	Malocclusion
+1334	Malocclusion	Malocclusion
+1335	Caries	Malocclusion
+1336	Tooth Loss	Caries
+1337	Malocclusion	Malocclusion
+1338	Tooth Structure Loss	Caries
+1339	Tooth Structure Loss	Caries
+1340	Caries	Caries
+1341	Gingivitis	Caries
+1342	Pulpitis	Caries
+1343	Malocclusion	Malocclusion
+1344	Gingivitis	Gingivitis
+1345	Tooth Loss	Malocclusion
+1346	Caries	Malocclusion
+1347	Gingivitis	Gingivitis
+1348	Tooth Loss	Malocclusion
+1349	Tooth Structure Loss	Caries
+1350	Gingivitis	Tooth Structure Loss
+1351	Malocclusion	Malocclusion
+1352	Pulpitis	Caries
+1353	Pulpitis	Malocclusion
+1354	Caries	Malocclusion
+1355	Malocclusion	Malocclusion
+1356	Caries	Malocclusion
+1357	Tooth Loss	Caries
+1358	Pulpitis	Caries
+1359	Pulpitis	Caries
+1360	Caries	Caries
+1361	Malocclusion	Malocclusion
+1362	Malocclusion	Malocclusion
+1363	Caries	Malocclusion
+1364	Pulpitis	Malocclusion
+1365	Pulpitis	Caries
+1366	Tooth Structure Loss	Malocclusion
+1367	Caries	Malocclusion
+1368	Tooth Structure Loss	Caries
+1369	Malocclusion	Malocclusion
+1370	Gingivitis	Malocclusion
+1371	Malocclusion	Malocclusion
+1372	Tooth Loss	Caries
+1373	Pulpitis	Caries
+1374	Pulpitis	Caries
+1375	Malocclusion	Malocclusion
+1376	Malocclusion	Malocclusion
+1377	Malocclusion	Malocclusion
+1378	Gingivitis	Malocclusion
+1379	Tooth Structure Loss	Caries
+1380	Gingivitis	Gingivitis
+1381	Tooth Structure Loss	Caries
+1382	Pulpitis	Caries
+1383	Tooth Loss	Caries
+1384	Tooth Loss	Caries
+1385	Tooth Loss	Malocclusion
+1386	Tooth Loss	Malocclusion
+1387	Malocclusion	Malocclusion
+1388	Tooth Structure Loss	Caries
+1389	Tooth Loss	Malocclusion
+1390	Tooth Loss	Caries
+1391	Malocclusion	Malocclusion
+1392	Tooth Loss	Tooth Loss
+1393	Tooth Loss	Caries
+1394	Caries	Malocclusion
+1395	Tooth Structure Loss	Malocclusion
+1396	Tooth Structure Loss	Caries
+1397	Tooth Structure Loss	Caries
+1398	Malocclusion	Malocclusion
+1399	Gingivitis	Gingivitis
+1400	Gingivitis	Gingivitis
+1401	Tooth Structure Loss	Caries
+1402	Tooth Loss	Malocclusion
+1403	Malocclusion	Malocclusion
+1404	Caries	Malocclusion
+1405	Caries	Malocclusion
+1406	Gingivitis	Caries
+1407	Caries	Gingivitis
+1408	Gingivitis	Gingivitis
+1409	Malocclusion	Malocclusion
+1410	Tooth Loss	Malocclusion
+1411	Caries	Caries
+1412	Pulpitis	Caries
+1413	Malocclusion	Malocclusion
+1414	Pulpitis	Caries
+1415	Malocclusion	Malocclusion
+1416	Tooth Structure Loss	Malocclusion
+1417	Gingivitis	Caries
+1418	Tooth Loss	Tooth Loss
+1419	Gingivitis	Caries
+1420	Tooth Structure Loss	Malocclusion
+1421	Gingivitis	Caries
+1422	Caries	Caries
+1423	Malocclusion	Malocclusion
+1424	Malocclusion	Malocclusion
+1425	Pulpitis	Caries
+1426	Malocclusion	Malocclusion
+1427	Tooth Structure Loss	Gingivitis
+1428	Gingivitis	Gingivitis
+1429	Tooth Loss	Tooth Loss
+1430	Tooth Structure Loss	Malocclusion
+1431	Pulpitis	Malocclusion
+1432	Tooth Loss	Tooth Loss
+1433	Tooth Structure Loss	Caries
+1434	Malocclusion	Malocclusion
+1435	Pulpitis	Malocclusion
+1436	Malocclusion	Malocclusion
+1437	Caries	Caries
+1438	Pulpitis	Caries
+1439	Gingivitis	Gingivitis
+1440	Tooth Structure Loss	Gingivitis
+1441	Gingivitis	Gingivitis
+1442	Pulpitis	Caries
+1443	Tooth Loss	Malocclusion
+1444	Gingivitis	Caries
+1445	Gingivitis	Gingivitis
+1446	Tooth Loss	Caries
+1447	Tooth Structure Loss	Malocclusion
+1448	Gingivitis	Gingivitis
+1449	Malocclusion	Malocclusion
+1450	Caries	Malocclusion
+1451	Tooth Structure Loss	Malocclusion
+1452	Pulpitis	Caries
+1453	Malocclusion	Malocclusion
+1454	Gingivitis	Gingivitis
+1455	Pulpitis	Pulpitis
+1456	Tooth Loss	Tooth Loss
+1457	Tooth Loss	Malocclusion
+1458	Pulpitis	Caries
+1459	Tooth Structure Loss	Caries
+1460	Tooth Loss	Caries
+1461	Caries	Malocclusion
+1462	Tooth Structure Loss	Caries
+1463	Pulpitis	Caries
+1464	Pulpitis	Caries
+1465	Tooth Structure Loss	Gingivitis
+1466	Tooth Loss	Malocclusion
+1467	Malocclusion	Malocclusion
+1468	Malocclusion	Malocclusion
+1469	Caries	Caries
+1470	Pulpitis	Malocclusion
+1471	Pulpitis	Caries
+1472	Gingivitis	Caries
+1473	Tooth Loss	Tooth Loss
+1474	Tooth Structure Loss	Malocclusion
+1475	Gingivitis	Caries
+1476	Pulpitis	Malocclusion
+1477	Tooth Loss	Malocclusion
+1478	Caries	Malocclusion
+1479	Tooth Structure Loss	Caries
+1480	Tooth Structure Loss	Caries
+1481	Tooth Structure Loss	Caries
+1482	Pulpitis	Caries
+1483	Caries	Malocclusion
+1484	Pulpitis	Caries
+1485	Tooth Loss	Tooth Loss
+1486	Malocclusion	Malocclusion
+1487	Tooth Loss	Tooth Structure Loss
+1488	Tooth Loss	Caries
+1489	Pulpitis	Caries
+1490	Pulpitis	Caries
+1491	Tooth Loss	Tooth Loss
+1492	Pulpitis	Caries
+1493	Tooth Structure Loss	Caries
+1494	Tooth Loss	Caries
+1495	Malocclusion	Malocclusion
+1496	Tooth Structure Loss	Caries
+1497	Gingivitis	Gingivitis
+1498	Caries	Malocclusion
+1499	Malocclusion	Malocclusion
+1500	Gingivitis	Caries
+1501	Tooth Structure Loss	Tooth Structure Loss
+1502	Tooth Loss	Tooth Loss
+1503	Gingivitis	Caries
+1504	Tooth Structure Loss	Caries
+1505	Tooth Loss	Malocclusion
+1506	Pulpitis	Caries
+1507	Gingivitis	Gingivitis
+1508	Caries	Caries
+1509	Caries	Malocclusion
+1510	Gingivitis	Malocclusion
+1511	Pulpitis	Caries
+1512	Gingivitis	Malocclusion
+1513	Tooth Structure Loss	Caries
+1514	Tooth Structure Loss	Caries
+1515	Caries	Malocclusion
+1516	Tooth Structure Loss	Malocclusion
+1517	Pulpitis	Caries
+1518	Gingivitis	Tooth Structure Loss
+1519	Tooth Loss	Malocclusion
+1520	Gingivitis	Gingivitis
+1521	Gingivitis	Gingivitis
+1522	Pulpitis	Caries
+1523	Tooth Loss	Caries
+1524	Malocclusion	Malocclusion
+1525	Malocclusion	Malocclusion
+1526	Tooth Structure Loss	Caries
+1527	Malocclusion	Malocclusion
+1528	Tooth Loss	Malocclusion
+1529	Caries	Malocclusion
+1530	Malocclusion	Malocclusion
+1531	Tooth Loss	Caries
+1532	Tooth Loss	Malocclusion
+1533	Gingivitis	Caries
+1534	Gingivitis	Gingivitis
+1535	Caries	Caries
+1536	Gingivitis	Caries
+1537	Malocclusion	Malocclusion
+1538	Tooth Loss	Malocclusion
+1539	Caries	Malocclusion
+1540	Gingivitis	Gingivitis
+1541	Malocclusion	Malocclusion
+1542	Gingivitis	Gingivitis
+1543	Pulpitis	Malocclusion
+1544	Tooth Loss	Malocclusion
+1545	Caries	Caries
+1546	Tooth Loss	Malocclusion
+1547	Malocclusion	Malocclusion
+1548	Tooth Loss	Gingivitis
+1549	Tooth Structure Loss	Malocclusion
+1550	Tooth Structure Loss	Caries
+1551	Pulpitis	Malocclusion
+1552	Malocclusion	Malocclusion
+1553	Tooth Loss	Tooth Loss
+1554	Tooth Loss	Gingivitis
+1555	Caries	Malocclusion
+1556	Malocclusion	Malocclusion
+1557	Pulpitis	Malocclusion
+1558	Tooth Structure Loss	Caries
+1559	Caries	Caries
+1560	Tooth Structure Loss	Caries
+1561	Malocclusion	Malocclusion
+1562	Gingivitis	Caries
+1563	Tooth Loss	Malocclusion
+1564	Malocclusion	Malocclusion
+1565	Gingivitis	Malocclusion
+1566	Tooth Loss	Malocclusion
+1567	Tooth Loss	Caries
+1568	Tooth Loss	Tooth Loss
+1569	Gingivitis	Caries
+1570	Tooth Loss	Tooth Loss
+1571	Gingivitis	Gingivitis
+1572	Malocclusion	Malocclusion
+1573	Pulpitis	Tooth Structure Loss
+1574	Tooth Structure Loss	Malocclusion
+1575	Caries	Caries
+1576	Caries	Malocclusion
+1577	Pulpitis	Caries
+1578	Gingivitis	Caries
+1579	Tooth Structure Loss	Caries
+1580	Gingivitis	Caries
+1581	Gingivitis	Gingivitis
+1582	Malocclusion	Malocclusion
+1583	Tooth Structure Loss	Malocclusion
+1584	Tooth Structure Loss	Malocclusion
+1585	Pulpitis	Caries
+1586	Tooth Loss	Malocclusion
+1587	Tooth Loss	Malocclusion
+1588	Tooth Loss	Caries
+1589	Gingivitis	Gingivitis
+1590	Malocclusion	Malocclusion
+1591	Pulpitis	Malocclusion
+1592	Malocclusion	Malocclusion
+1593	Caries	Malocclusion
+1594	Tooth Loss	Tooth Loss
+1595	Gingivitis	Caries
+1596	Malocclusion	Malocclusion
+1597	Tooth Loss	Tooth Loss
+1598	Malocclusion	Malocclusion
+1599	Caries	Caries
+1600	Gingivitis	Caries
+1601	Malocclusion	Malocclusion
+1602	Pulpitis	Malocclusion
+1603	Malocclusion	Malocclusion
+1604	Gingivitis	Caries
+1605	Caries	Malocclusion
+1606	Tooth Structure Loss	Tooth Loss
+1607	Malocclusion	Malocclusion
+1608	Malocclusion	Malocclusion
+1609	Tooth Structure Loss	Malocclusion
+1610	Gingivitis	Malocclusion
+1611	Caries	Malocclusion
+1612	Gingivitis	Gingivitis
+1613	Caries	Malocclusion
+1614	Gingivitis	Gingivitis
+1615	Gingivitis	Caries
+1616	Caries	Caries
+1617	Tooth Loss	Malocclusion
+1618	Gingivitis	Gingivitis
+1619	Tooth Structure Loss	Caries
+1620	Pulpitis	Caries
+1621	Gingivitis	Gingivitis
+1622	Caries	Malocclusion
+1623	Tooth Structure Loss	Caries
+1624	Malocclusion	Malocclusion
+1625	Gingivitis	Caries
+1626	Tooth Structure Loss	Caries
+1627	Tooth Structure Loss	Gingivitis
+1628	Caries	Malocclusion
+1629	Caries	Caries
+1630	Malocclusion	Malocclusion
+1631	Malocclusion	Malocclusion
+1632	Malocclusion	Malocclusion
+1633	Gingivitis	Gingivitis
+1634	Tooth Structure Loss	Malocclusion
+1635	Gingivitis	Gingivitis
+1636	Malocclusion	Malocclusion
+1637	Pulpitis	Malocclusion
+1638	Gingivitis	Gingivitis
+1639	Gingivitis	Caries
+1640	Gingivitis	Caries
+1641	Malocclusion	Malocclusion
+1642	Caries	Caries
+1643	Pulpitis	Caries
+1644	Tooth Structure Loss	Malocclusion
+1645	Tooth Structure Loss	Malocclusion
+1646	Caries	Malocclusion
+1647	Pulpitis	Caries
+1648	Caries	Malocclusion
+1649	Pulpitis	Tooth Loss
+1650	Gingivitis	Caries
+1651	Caries	Caries
+1652	Pulpitis	Malocclusion
+1653	Tooth Loss	Malocclusion
+1654	Gingivitis	Gingivitis
+1655	Pulpitis	Caries
+1656	Malocclusion	Malocclusion
+1657	Caries	Caries
+1658	Tooth Structure Loss	Caries
+1659	Pulpitis	Tooth Structure Loss
+1660	Tooth Structure Loss	Caries
+1661	Tooth Structure Loss	Caries
+1662	Malocclusion	Malocclusion
+1663	Caries	Caries
+1664	Tooth Loss	Gingivitis
+1665	Tooth Loss	Caries
+1666	Pulpitis	Caries
+1667	Tooth Structure Loss	Caries
+1668	Tooth Structure Loss	Caries
+1669	Malocclusion	Malocclusion
+1670	Tooth Structure Loss	Caries
+1671	Malocclusion	Malocclusion
+1672	Gingivitis	Gingivitis
+1673	Tooth Loss	Caries
+1674	Malocclusion	Malocclusion
+1675	Caries	Malocclusion
+1676	Tooth Structure Loss	Malocclusion
+1677	Gingivitis	Gingivitis
+1678	Pulpitis	Caries
+1679	Tooth Structure Loss	Caries
+1680	Tooth Loss	Gingivitis
+1681	Tooth Loss	Tooth Loss
+1682	Caries	Malocclusion
+1683	Pulpitis	Caries
+1684	Pulpitis	Caries
+1685	Caries	Caries
+1686	Tooth Structure Loss	Malocclusion
+1687	Caries	Malocclusion
+1688	Gingivitis	Gingivitis
+1689	Gingivitis	Gingivitis
+1690	Tooth Structure Loss	Caries
+1691	Caries	Gingivitis
+1692	Pulpitis	Pulpitis
+1693	Malocclusion	Malocclusion
+1694	Tooth Loss	Tooth Loss
+1695	Tooth Structure Loss	Caries
+1696	Caries	Malocclusion
+1697	Tooth Structure Loss	Malocclusion
+1698	Gingivitis	Gingivitis
+1699	Gingivitis	Gingivitis
+1700	Tooth Structure Loss	Malocclusion
+1701	Malocclusion	Malocclusion
+1702	Caries	Gingivitis
+1703	Tooth Loss	Caries
+1704	Gingivitis	Gingivitis
+1705	Malocclusion	Malocclusion
+1706	Caries	Caries
+1707	Malocclusion	Malocclusion
+1708	Pulpitis	Caries
+1709	Gingivitis	Caries
+1710	Pulpitis	Caries
+1711	Caries	Caries
+1712	Malocclusion	Malocclusion
+1713	Malocclusion	Malocclusion
+1714	Pulpitis	Malocclusion
+1715	Tooth Loss	Tooth Loss
+1716	Caries	Malocclusion
+1717	Malocclusion	Malocclusion
+1718	Tooth Loss	Caries
+1719	Tooth Structure Loss	Malocclusion
+1720	Gingivitis	Caries
+1721	Malocclusion	Malocclusion
+1722	Caries	Caries
+1723	Caries	Caries
+1724	Gingivitis	Gingivitis
+1725	Malocclusion	Malocclusion
+1726	Tooth Structure Loss	Caries
+1727	Pulpitis	Caries
+1728	Tooth Structure Loss	Caries
+1729	Tooth Structure Loss	Caries
+1730	Tooth Loss	Malocclusion
+1731	Tooth Loss	Malocclusion
+1732	Gingivitis	Caries
+1733	Pulpitis	Caries
+1734	Caries	Malocclusion
+1735	Gingivitis	Gingivitis
+1736	Malocclusion	Malocclusion
+1737	Tooth Structure Loss	Caries
+1738	Pulpitis	Pulpitis
+1739	Caries	Malocclusion
+1740	Caries	Malocclusion
+1741	Tooth Loss	Tooth Loss
+1742	Tooth Loss	Malocclusion
+1743	Tooth Structure Loss	Malocclusion
+1744	Malocclusion	Malocclusion
+1745	Caries	Malocclusion
+1746	Tooth Structure Loss	Caries
+1747	Tooth Structure Loss	Caries
+1748	Malocclusion	Malocclusion
+1749	Malocclusion	Malocclusion
+1750	Tooth Loss	Caries
+1751	Gingivitis	Malocclusion
+1752	Gingivitis	Tooth Structure Loss
+1753	Gingivitis	Gingivitis
+1754	Caries	Caries
+1755	Caries	Caries
+1756	Pulpitis	Malocclusion
+1757	Tooth Structure Loss	Caries
+1758	Tooth Loss	Malocclusion
+1759	Gingivitis	Gingivitis
+1760	Caries	Malocclusion
+1761	Gingivitis	Gingivitis
+1762	Tooth Loss	Malocclusion
+1763	Pulpitis	Malocclusion
+1764	Tooth Structure Loss	Malocclusion
+1765	Gingivitis	Caries
+1766	Tooth Structure Loss	Caries
+1767	Tooth Structure Loss	Caries
+1768	Tooth Structure Loss	Malocclusion
+1769	Malocclusion	Malocclusion
+1770	Pulpitis	Caries
+1771	Tooth Structure Loss	Malocclusion
+1772	Tooth Structure Loss	Malocclusion
+1773	Malocclusion	Malocclusion
+1774	Malocclusion	Malocclusion
+1775	Tooth Structure Loss	Caries
+1776	Caries	Malocclusion
+1777	Gingivitis	Tooth Structure Loss
+1778	Caries	Caries
+1779	Gingivitis	Caries
+1780	Pulpitis	Caries
+1781	Caries	Malocclusion
+1782	Tooth Structure Loss	Caries
+1783	Pulpitis	Caries
+1784	Tooth Structure Loss	Caries
+1785	Pulpitis	Malocclusion
+1786	Caries	Malocclusion
+1787	Caries	Caries
+1788	Caries	Caries
+1789	Pulpitis	Caries
+1790	Malocclusion	Malocclusion
+1791	Caries	Malocclusion
+1792	Tooth Loss	Malocclusion
+1793	Malocclusion	Malocclusion
+
+metric	value
+Accuracy	0.376464
+Precision	0.446744
+Recall	0.321972
+F1	0.281597
